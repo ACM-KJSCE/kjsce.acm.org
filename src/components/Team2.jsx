@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import TeamCard from "./TeamCard";
-import teams from "../data/team";
+import team2024 from "../data/team2024";
 
 
 function Team2() {
@@ -27,7 +27,7 @@ function Team2() {
               </div>
           </div>
         </div>
-        {teams.map((team, index) => (
+        {team2024.map((team, index) => (
           <TeamCard
             key={index}
             cardRef={cardRef}

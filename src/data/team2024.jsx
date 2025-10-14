@@ -1,4 +1,4 @@
-const teams =
+const team2024 =
   [
     {
         "teamName": "CORES",
@@ -452,4 +452,4 @@ const teams =
     }
 ]
 
-export default teams;
+export default team2024;
