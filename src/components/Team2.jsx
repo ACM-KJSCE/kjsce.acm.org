@@ -1,15 +1,4 @@
-import React, { useRef } from "react";
-import TeamCard from "./TeamCard";
-import teams from "../data/team";
-
-
 function Team2() {
-  const cardRef = useRef([]);
-  const imagesRef = useRef([]);
-
-
-  
-
   return (
     <>
       <div id = "our-team" className="my-5 h-full flex flex-col">
@@ -27,16 +16,7 @@ function Team2() {
               </div>
           </div>
         </div>
-        {teams.map((team, index) => (
-          <TeamCard
-            key={index}
-            cardRef={cardRef}
-            team={team}
-            imagesRef={imagesRef}
-            index={index}
-          />
-        ))}
-        </div>
+      </div>
     </>
   );
 }
