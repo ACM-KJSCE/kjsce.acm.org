@@ -1,5 +1,5 @@
 const globeConfig = {
-    pointSize: 4,
+    pointSize: 5,
     globeColor: "#062056",
     showAtmosphere: true,
     atmosphereColor: "#FFFFFF",
@@ -18,7 +18,7 @@ const globeConfig = {
     maxRings: 3,
     initialPosition: { lat: 22.3193, lng: 114.1694 },
     autoRotate: true,
-    autoRotateSpeed: 0.5,
+    autoRotateSpeed: 2.0,
   };
 
 export default globeConfig;

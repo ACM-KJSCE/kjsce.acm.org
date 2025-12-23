@@ -1,8 +1,9 @@
 import React, { Suspense, useRef } from "react";
 import { WavyBackground } from "./ui/wavy-background";
-// import sampleArcs from "../data/SampleArcs";
-// import globeConfig from "../data/GlobeConfig";
 import "./styles/Hero.css"
+import { World } from "./ui/globe";
+import sampleArcs from "../data/SampleArcs";
+import globeConfig from "../data/GlobeConfig";
 
 // const World = React.lazy(() => import("./ui/globe"));
 
@@ -35,10 +36,9 @@ function Hero() {
         </div>
 
         {/* Right Side: Globe */}
-        <div className="relative lg:h-[35rem] md:h-[30rem] h-[20rem] w-full flex justify-center items-center">
-          {/* <Suspense fallback={<div className="text-white">Loading...</div>}> */}
-            {/* <World data={sampleArcs} globeConfig={globeConfig} /> */}
-            <model-viewer src="/models/Earth.glb"
+        <div className="relative lg:h-[36rem] md:h-[30rem] h-[20rem] w-full flex justify-center items-center">
+            <World data={sampleArcs} globeConfig={globeConfig} />
+            {/* <model-viewer src="/models/Earth.glb"
                   ios-src="/models/Earth.usdz"
                   poster="/assets/01EarthModel.png"
                   alt="A 3D model of an Earth"
@@ -52,7 +52,7 @@ function Hero() {
                   exposure="0.8"
                   ref={(ref) => {
                     modelRef.current = ref;
-                  }}/>
+                  }}/> */}
             
           {/* </Suspense> */}
           
