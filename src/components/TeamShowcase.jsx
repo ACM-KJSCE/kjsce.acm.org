@@ -19,8 +19,14 @@ const TeamShowcase = () => {
                 scrollTrigger: {
                     trigger: containerRef.current,
                     start: 'top top',
-                    end: `+=${totalTeams * 50}%`,
+                    end: `+=${totalTeams * 100}%`,
                     scrub: 1,
+                    snap: {
+                        snapTo: 1 / (totalTeams - 1),
+                        duration: { min: 0.2, max: 0.8 },
+                        delay: 0,
+                        ease: "power1.inOut"
+                    },
                     pin: true,
                     onUpdate: (self) => {
                         const idx = Math.min(
@@ -42,15 +48,15 @@ const TeamShowcase = () => {
                     autoAlpha: 0,
                     y: -10,
                     duration: 1,
-                    ease: 'power1.inOut'
+                    ease: 'power2.inOut'
                 })
                     .to(sections[next], {
                         autoAlpha: 1,
                         y: 0,
                         duration: 1,
-                        ease: 'power1.inOut'
+                        ease: 'power2.inOut'
                     }, "<");
-                tl.to({}, { duration: 0.5 });
+
             });
 
         }, containerRef);
@@ -62,16 +68,17 @@ const TeamShowcase = () => {
     return (
         <div
             ref={containerRef}
-            className="relative w-full h-screen text-white bg-gradient-to-b from-[#197EB2] to-black shadow-lg rounded-lg font-sans selection:text-cyan-100 overflow-hidden mt-16 md:mt-20 p-4"
+            className="relative w-full h-screen text-white rounded-lg font-sans selection:text-cyan-100 overflow-hidden mt-24 md:mt-20 p-4"
         >
             <div className="absolute inset-0 w-full h-full flex items-center justify-center">
                 {teams.map((team, index) => (
                     <div
                         key={team.teamId}
                         ref={(el) => (sectionsRef.current[index] = el)}
-                        className="absolute inset-0 w-full h-full opacity-0"
+                        className={`absolute inset-0 w-full h-full opacity-0 ${index === activeIndex ? 'pointer-events-auto z-10' : 'pointer-events-none z-0'
+                            }`}
                     >
-                        <TeamSection team={team} />
+                        <TeamSection team={team} isActive={index === activeIndex} />
                     </div>
                 ))}
             </div>
