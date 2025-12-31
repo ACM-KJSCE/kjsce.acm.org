@@ -16,17 +16,17 @@ function Event() {
 
   return (
     <div id="events" className="relative w-full py-12 px-4 md:px-8 mt-8">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto flex flex-col justify-center items-center">
         <h1 className="text-4xl uppercase font-black text-center dark:text-white text-black mb-12 border-b-cyan-400 border-b-2 inline-block mx-auto pb-4">
           Our Events
         </h1>
 
-        <div className="relative h-[500px] w-full rounded-2xl overflow-hidden shadow-2xl group">
+        <div className="relative h-[500px] w-full max-w-4xl aspect-[5/3] rounded-2xl overflow-hidden shadow-2xl group">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentIndex}
               initial={{ opacity: 0, scale: 1.1 }}
-              animate={{ opacity: 1, scale: 1 }}
+              animate={{ opacity: 1, scale: 1 }}  
               exit={{ opacity: 0 }}
               transition={{ duration: 0.7 }}
               className="absolute inset-0 w-full h-full"
@@ -42,7 +42,7 @@ function Event() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
-                  className="flex items-center gap-2 text-white font-bold uppercase tracking-wider bg-black/30 backdrop-blur-sm px-4 py-2 rounded-full border border-white/10"
+                  className="flex items-center gap-2 text-white font-bold uppercase tracking-wider bg-black/30 backdrop-blur-sm px-4 py-2 rounded-full border border-white/10 sm:flex hidden"
                 >
                   <Calendar className="w-4 h-4" />
                   {events[currentIndex].fullDate}

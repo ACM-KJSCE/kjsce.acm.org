@@ -84,7 +84,7 @@ export default function EventDetails() {
                     <div className="font-semibold text-lg flex items-center gap-2">
                       {event.venue}
                     </div>
-                    <div className="text-gray-400">Mumbai, Maharashtra</div>
+                    <div className="text-gray-400">KJSSE, Mumbai, Maharashtra</div>
                   </div>
                 </div>
               )}
