@@ -61,7 +61,7 @@ const Navbar = () => {
                         <img
                             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                             className="h-14 m-5 cursor-pointer origin-left"
-                            src="logo_withoutbg.png"
+                            src="../logo_withoutbg.png"
                             alt="logo"
                         />
                     </div>
