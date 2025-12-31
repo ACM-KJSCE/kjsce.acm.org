@@ -149,7 +149,7 @@ export default function TeamSection({
                     onMouseEnter={() => onHoverMember?.(member.id)}
                     onFocus={() => onHoverMember?.(member.id)}
                     onClick={() => onHoverMember?.(member.id)}
-                    className={`w-32 h-32 rounded-full overflow-hidden flex items-center justify-center transition-all duration-300 border-2 outline-none focus:outline-none ${
+                    className={`w-32 h-32 rounded-md overflow-hidden flex items-center justify-center transition-all duration-300 border-2 outline-none focus:outline-none ${
                       isSelected
                         ? "scale-110 shadow-[0_0_20px_rgba(6,182,212,0.4)] ring-2 ring-cyan-400 z-10 bg-cyan-900/40 border-cyan-400"
                         : `scale-100 hover:scale-105 hover:shadow-lg opacity-90 hover:opacity-100 ${pastelColors[index % pastelColors.length]}`
@@ -223,7 +223,7 @@ export default function TeamSection({
                 >
                   <button
                     onClick={() => onHoverMember?.(member.id)}
-                    className={`w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden flex items-center justify-center transition-all duration-300 border-2 outline-none focus:outline-none ${
+                    className={`w-24 h-24 md:w-28 md:h-28 rounded-md overflow-hidden flex items-center justify-center transition-all duration-300 border-2 outline-none focus:outline-none ${
                       isSelected
                         ? "scale-110 shadow-[0_0_20px_rgba(6,182,212,0.4)] ring-2 ring-cyan-400 z-10 bg-cyan-900/40 border-cyan-400"
                         : `scale-100 hover:scale-105 hover:shadow-lg opacity-90 hover:opacity-100 ${pastelColors[index % pastelColors.length]}`

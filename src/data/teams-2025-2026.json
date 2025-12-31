@@ -2,7 +2,7 @@
   "year": "2025-2026",
   "teamdeta": [
     {
-      "teamName": "CORES",
+      "teamName": "CORE TEAM",
       "description": "Leading the chapter with vision and dedication.",
       "members": [
         {
@@ -13,7 +13,6 @@
           "bio": "Leading the ACM chapter to new heights.",
           "quote": "Leadership is action, not position.",
           "links": {
-            "codechef": "https://www.codechef.com/users/viraj-ap",
             "github": "https://github.com/viraj-ap",
             "leetcode": "",
             "codeforces": ""

@@ -1,63 +1,82 @@
-import React, { Suspense, useRef } from "react";
-import { WavyBackground } from "./ui/wavy-background";
+import React, { Suspense } from "react";
 import sampleArcs from "../data/SampleArcs";
 import globeConfig from "../data/GlobeConfig";
-import "./styles/Hero.css"
+import "./styles/Hero.css";
+import { ShaderGradientCanvas, ShaderGradient } from "@shadergradient/react";
 
 const World = React.lazy(() => import("./ui/globe"));
 
 function Hero() {
-  const modelRef = useRef();
   return (
-    <WavyBackground className="max-w-7xl mx-auto px-4 py-16 sm:mt-64 md:mt-96 mt-72 lg:mt-0">
-      <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-20 gap-0 items-center">
-        {/* Left Side: Text Content */}
-        <div className="flex absolute top-0 left-0 w-full">
-          {/* <div className="glow"></div> */}
-        </div>
-        <div className="text-white text-center lg:text-left">
-          <div className="flex justify-center items-center">
-            <img className="w-52 md:w-44" src="logo_withoutbg.png" alt="" />
+    <section className="w-full flex justify-center px-4 md:px-4 lg:px-4">
+      {/* Rounded Gradient Section */}
+      <div className="relative w-full max-w-7xl h-[85vh] rounded-3xl overflow-hidden">
+        {/* Shader Gradient */}
+        <ShaderGradientCanvas
+          style={{ width: "100%", height: "100%" }}
+          pixelDensity={1}
+          pointerEvents="auto"
+        >
+          <ShaderGradient
+            animate="on"
+            type="sphere"
+            shader="defaults"
+            uSpeed={0.3}
+            uStrength={0.3}
+            uDensity={0.8}
+            uFrequency={5.5}
+            uAmplitude={3.2}
+            positionX={-0.1}
+            rotationY={130}
+            rotationZ={70}
+            color1="#92dbe0"
+            color2="#0b7bff"
+            color3="#3865cf"
+            reflection={0.4}
+            brightness={0.8}
+            envPreset="city"
+            grain="on"
+            cDistance={0.5}
+            cameraZoom={15.1}
+          />
+        </ShaderGradientCanvas>
+
+        {/* Content Overlay */}
+        <div className="absolute inset-0 z-10 flex items-center justify-center px-6 md:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl w-full items-center">
+            {/* LEFT — TEXT */}
+            <div className="text-white text-center lg:text-left">
+              <div className="flex justify-center lg:justify-start">
+                <img
+                  src="/logo_withoutbg.png"
+                  alt="KJSCE ACM"
+                  className="w-36 md:w-44 h-34 bg-black rounded-xl p-2"
+                />
+              </div>
+
+              <h1 className="text-4xl md:text-4xl lg:text-5xl font-bold mt-8">
+                We are KJSSE –<span className="text-blue-300"> ACM</span>
+              </h1>
+
+              <p className="mt-6 text-xl md:text-2xl text-gray-200">
+                Curious to find out what we do?
+              </p>
+
+              <p className="mt-2 text-sm text-gray-400">
+                Scroll down to see :)
+              </p>
+            </div>
+
+            {/* RIGHT — GLOBE */}
+            <div className="relative h-[18rem] md:h-[28rem] lg:h-[34rem] w-full flex justify-center items-center">
+              <Suspense fallback={<div className="text-white">Loading...</div>}>
+                <World data={sampleArcs} globeConfig={globeConfig} />
+              </Suspense>
+            </div>
           </div>
-          <div className="text-4xl md:text-5xl lg:text-6xl font-bold mb:mb-6 md:mt-2 mt-8 opacity-90">
-            We are KJSCE -{" "}
-            <span className="text-blue-300 opacity-100">ACM</span>
-          </div>
-
-          <div className="mt-8">
-            <p className="text-xl md:text-2xl font-medium">
-              Curious to find out what we do?
-            </p>
-            <p className="text-gray-300 text-xs mt-2">Scroll down to see</p>
-          </div>
-        </div>
-
-        {/* Right Side: Globe */}
-        <div className="relative lg:h-[35rem] md:h-[30rem] h-[20rem] w-full flex justify-center items-center">
-          <Suspense fallback={<div className="text-white">Loading...</div>}>
-            <World data={sampleArcs} globeConfig={globeConfig} />
-            {/* <model-viewer src="/models/Earth.glb"
-                  ios-src="/models/Earth.usdz"
-                  poster="/assets/01EarthModel.png"
-                  alt="A 3D model of an Earth"
-                  style = {{width: "80%", height: "80%"}}
-                  camera-controls
-                  auto-rotate ar
-                  disable-zoom
-                  disable-pan
-                  loading="eager"
-                  ar-modes="scene-viewer webxr quick-look"
-                  exposure="0.8"
-                  ref={(ref) => {
-                    modelRef.current = ref;
-                  }}/> */}
-
-          </Suspense>
-
-
         </div>
       </div>
-    </WavyBackground>
+    </section>
   );
 }
 

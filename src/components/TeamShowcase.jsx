@@ -90,7 +90,7 @@ const TeamShowcase = () => {
           <button
             key={year}
             onClick={() => handleYearChange(year)}
-            className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 border-2 ${
+            className={`px-4 py-2 rounded-md text-sm font-semibold transition-all duration-300 border-2 ${
               selectedYear === year
                 ? "bg-cyan-500 border-cyan-500 text-white shadow-lg shadow-cyan-500/30"
                 : "bg-transparent border-gray-500 text-gray-300 hover:border-cyan-400 hover:text-cyan-400"
