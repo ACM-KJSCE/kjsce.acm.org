@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Calendar } from "lucide-react";
-import { Link } from "react-router";
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Calendar } from 'lucide-react';
+import { Link } from 'react-router';
 import events from "../data/events.json";
 
 function Event() {
@@ -26,16 +26,14 @@ function Event() {
             <motion.div
               key={currentIndex}
               initial={{ opacity: 0, scale: 1.1 }}
-              animate={{ opacity: 1, scale: 1 }}
+              animate={{ opacity: 1, scale: 1 }}  
               exit={{ opacity: 0 }}
               transition={{ duration: 0.7 }}
               className="absolute inset-0 w-full h-full"
             >
               <div
                 className="absolute inset-0 bg-cover bg-top"
-                style={{
-                  backgroundImage: `url(${events[currentIndex].imageUrl})`,
-                }}
+                style={{ backgroundImage: `url(${events[currentIndex].imageUrl})` }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#1a2035] via-[#1a2035]/60 to-transparent" />
 
@@ -81,11 +79,8 @@ function Event() {
               <button
                 key={idx}
                 onClick={() => setCurrentIndex(idx)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  idx === currentIndex
-                    ? "bg-cyan-400 w-8"
-                    : "bg-white/30 hover:bg-white/50"
-                }`}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${idx === currentIndex ? 'bg-cyan-400 w-8' : 'bg-white/30 hover:bg-white/50'
+                  }`}
               />
             ))}
           </div>

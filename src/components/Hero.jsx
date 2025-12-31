@@ -2,7 +2,7 @@ import React, { Suspense, useRef } from "react";
 import { WavyBackground } from "./ui/wavy-background";
 import sampleArcs from "../data/SampleArcs";
 import globeConfig from "../data/GlobeConfig";
-import "./styles/Hero.css";
+import "./styles/Hero.css"
 
 const World = React.lazy(() => import("./ui/globe"));
 
@@ -51,7 +51,10 @@ function Hero() {
                   ref={(ref) => {
                     modelRef.current = ref;
                   }}/> */}
+
           </Suspense>
+
+
         </div>
       </div>
     </WavyBackground>

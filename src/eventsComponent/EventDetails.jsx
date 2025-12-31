@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useParams, useNavigate } from "react-router";
 import events from "../data/events.json";
 import { MoveLeft, Calendar, MapPin, Clock, Tag } from "lucide-react";
@@ -7,8 +8,11 @@ export default function EventDetails() {
   const navigate = useNavigate();
   const event = events.find((x) => x.code === params.eventName);
 
-  if (!event)
-    return <div className="text-white text-center p-10">Event not found</div>;
+  if (!event) return <div className="text-white text-center p-10">Event not found</div>;
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, []);
 
   return (
     <div className="min-h-screen bg-black/40 shadow-lg ring-1 ring-white/5 text-white p-4 md:p-8 font-sans">
@@ -36,10 +40,7 @@ export default function EventDetails() {
                 </h3>
                 <div className="flex flex-col gap-3">
                   {event.sponsors.map((sponsor, index) => (
-                    <div
-                      key={index}
-                      className="group flex items-center gap-4 bg-white/5 hover:bg-white/10 p-3 rounded-lg transition-all duration-300 border border-white/5 hover:border-white/20"
-                    >
+                    <div key={index} className="group flex items-center gap-4 bg-white/5 hover:bg-white/10 p-3 rounded-lg transition-all duration-300 border border-white/5 hover:border-white/20">
                       <div className="h-auto w-16 rounded-lg flex items-center justify-center">
                         <img
                           src={sponsor.url}
@@ -49,9 +50,7 @@ export default function EventDetails() {
                         />
                       </div>
                       <div className="flex-1">
-                        <p className="text-white font-medium text-sm group-hover:text-cyan-300 transition-colors">
-                          {sponsor.name}
-                        </p>
+                        <p className="text-white font-medium text-sm group-hover:text-cyan-300 transition-colors">{sponsor.name}</p>
                       </div>
                     </div>
                   ))}
@@ -90,9 +89,7 @@ export default function EventDetails() {
                     <div className="font-semibold text-lg flex items-center gap-2">
                       {event.venue}
                     </div>
-                    <div className="text-gray-400">
-                      KJSSE, Mumbai, Maharashtra
-                    </div>
+                    <div className="text-gray-400">KJSSE, Mumbai, Maharashtra</div>
                   </div>
                 </div>
               )}
@@ -101,10 +98,9 @@ export default function EventDetails() {
             {/* Status Card */}
             <div className="p-3 bg-white/5 hover:bg-white/10 rounded-lg transition-all duration-300 border border-white/5 hover:border-white/20 flex flex-col items-center justify-center relative overflow-hidden mb-8">
               <h3 className="text-xl font-bold mb-1">Thank You for Joining</h3>
-              <p className="text-gray-400 text-sm">
-                We hope you enjoyed the event!
-              </p>
+              <p className="text-gray-400 text-sm">We hope you enjoyed the event!</p>
             </div>
+
 
             {/* About Section */}
             <div>
@@ -125,16 +121,12 @@ export default function EventDetails() {
                 <h2 className="text-2xl font-bold mb-6">Event Gallery</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                   {event.gallery.map((img, idx) => (
-                    <img
-                      key={idx}
-                      src={img}
-                      className="rounded-lg hover:scale-105 transition-transform duration-300 border border-white/10"
-                      alt="Gallery"
-                    />
+                    <img key={idx} src={img} className="rounded-lg hover:scale-105 transition-transform duration-300 border border-white/10" alt="Gallery" />
                   ))}
                 </div>
               </div>
             )}
+
           </div>
         </div>
       </div>
@@ -151,7 +143,8 @@ function BackButton({ navigate }) {
       <div className="p-1 rounded-full group-hover:bg-white/10 transition-colors">
         <MoveLeft className="w-5 h-5" />
       </div>
-      <span className="font-medium">Back to Events</span>
+      <span className="font-medium">Back to Home</span>
     </button>
   );
 }
+
