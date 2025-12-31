@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useParams, useNavigate } from "react-router";
 import events from "../data/events.json";
 import { MoveLeft, Calendar, MapPin, Clock, Tag } from "lucide-react";
@@ -8,6 +9,10 @@ export default function EventDetails() {
   const event = events.find((x) => x.code === params.eventName);
 
   if (!event) return <div className="text-white text-center p-10">Event not found</div>;
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, []);
 
   return (
     <div className="min-h-screen bg-black/40 shadow-lg ring-1 ring-white/5 text-white p-4 md:p-8 font-sans">
@@ -138,7 +143,7 @@ function BackButton({ navigate }) {
       <div className="p-1 rounded-full group-hover:bg-white/10 transition-colors">
         <MoveLeft className="w-5 h-5" />
       </div>
-      <span className="font-medium">Back to Events</span>
+      <span className="font-medium">Back to Home</span>
     </button>
   );
 }
