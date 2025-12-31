@@ -1,8 +1,23 @@
 [
   {
+    "title": "Beyond the Classroom",
+    "description": "We are the ACM Student Chapter- KJSCE’s official arm of the world’s largest computing society.\n\nThis September, we bring back our signature seminar:\n\n✨ BEYOND THE CLASSROOM ✨\n\nAn event designed to show you what truly sets achievers apart- how to build skills, mindset, and (international) credibility beyond academics.\n\n📝 Learn how to stand out beyond your grades\n\n🎓 Hear from those who’ve walked the path\n\n📰 Unlock the blueprint for success\n\nFreshers, this is where it begins. Your network, your mentors, and maybe even your future teammates are waiting for you here ‼️",
+    "imageUrl": "https://res.cloudinary.com/dzsscqf6t/image/upload/v1767188152/Btc-2025_l17rad.jpg",
+    "code": "btc-2025",
+    "day": "Monday",
+    "month": "Sep",
+    "date": "01",
+    "fullDate": "Monday, September 1, 2025",
+    "time": "5:00 PM - 7:00 PM",
+    "venue": "B113 SEMINAR HALL",
+    "gallery": [
+      "https://res.cloudinary.com/dz9lsudey/image/upload/v1767172224/btc25team_uphkkg.jpg"
+    ]
+  },
+  {
     "title": "Escape Sequence",
     "description": "Think fast, solve faster! KJSCE ACM presents Escape Sequence, THE high-stakes tech escape room where logic,problem-solving, and speed are your keys to victory.",
-    "imageUrl": "https://res.cloudinary.com/dz9lsudey/image/upload/v1755012804/Escape_Sequence_bcacbt.jpg",
+    "imageUrl": "https://res.cloudinary.com/dzsscqf6t/image/upload/v1767186450/Escape_Sequence_bcacbt_lx4xbf.jpg",
     "code": "Escape-Sequence-2025",
     "day": "Tuesday",
     "month": "Apr",
@@ -22,15 +37,30 @@
     "time": "5:00 PM - 7:00 PM"
   },
   {
-    "title": "Artemis",
+    "title": "Artemis 2024",
     "description": "Artemis, brought to you by KJSCE ACM Student Chapter, is a fun and dynamic frontend mini-hackathon. It's all about unleashing your creativity in web development—crafting cool designs, building functional frontends, and tackling unique challenges. Whether you're a pro or just starting out, it's a great chance to learn, create, and win!",
     "imageUrl": "https://res.cloudinary.com/dz9lsudey/image/upload/v1755012639/Artemis_j9dnvm.jpg",
     "sponsors": [
-      "/sponsor/Zapz.png",
-      "/sponsor/BlueSquirrel.png",
-      "/sponsor/SnackRack.jpg",
-      "/sponsor/InterviewBuddy.png",
-      "/sponsor/Beeceptor.png"
+      {
+        "name": "Zapz",
+        "url": "/sponsor/Zapz.png"
+      },
+      {
+        "name": "Blue Squirrel",
+        "url": "/sponsor/BlueSquirrel.png"
+      },
+      {
+        "name": "Snack Rack",
+        "url": "/sponsor/SnackRack.jpg"
+      },
+      {
+        "name": "Interview Buddy",
+        "url": "/sponsor/InterviewBuddy.png"
+      },
+      {
+        "name": "Beeceptor",
+        "url": "/sponsor/Beeceptor.png"
+      }
     ],
     "code": "Artemis-2024",
     "day": "Tuesday",
@@ -41,15 +71,33 @@
   },
   {
     "title": "Beyond the Classroom",
-    "description": "Beyond the Classroom, conducted by the students of KJSCE ACM, brought together 150+ first-year students for an engaging session on Hackathons, Git, GitHub, and Competitive Programming. The event aimed to simplify key tech concepts and inspire students to explore the world of coding and innovation.",
-    "imageUrl": "https://res.cloudinary.com/dz9lsudey/image/upload/v1755012640/BTC_u6fb31.jpg",
+    "description": "BEYOND THE CLASSROOM, organized by the KJSCE ACM Student Chapter, is a dedicated event for first-year engineering students.\n\nIt offers guidance on balancing academics with extracurriculars, joining tech teams, resume building, and provides introductions to web development, hackathons, competitive programming, Git and GitHub.\n\nThis event is designed to prepare freshers for a successful and well-rounded college experience!",
+    "imageUrl": "https://res.cloudinary.com/dzsscqf6t/image/upload/v1767186698/BTC_u6fb31_ed4ti2.jpg",
     "sponsors": [
-      "/sponsor/Sip&Smile.jpg",
-      "/sponsor/ConsoleGaming.jpg",
-      "/sponsor/HouseOfDelicious.png",
-      "/sponsor/Love&Latte.png",
-      "/sponsor/MinistryOfGames.png",
-      "/sponsor/smootheory.png"
+      {
+        "name": "Sip & Smile",
+        "url": "/sponsor/Sip&Smile.jpg"
+      },
+      {
+        "name": "Console Gaming",
+        "url": "/sponsor/ConsoleGaming.jpg"
+      },
+      {
+        "name": "House Of Delicious",
+        "url": "/sponsor/HouseOfDelicious.png"
+      },
+      {
+        "name": "Love & Latte",
+        "url": "/sponsor/Love&Latte.png"
+      },
+      {
+        "name": "Ministry Of Games",
+        "url": "/sponsor/MinistryOfGames.png"
+      },
+      {
+        "name": "Smootheory",
+        "url": "/sponsor/smootheory.png"
+      }
     ],
     "code": "btc-2024",
     "day": "Wednesday",
@@ -58,20 +106,5 @@
     "fullDate": "Wednesday, September 4, 2024",
     "time": "5:00 PM - 7:00 PM",
     "venue": "B113 SEMINAR HALL"
-  },
-  {
-    "title": "Beyond the Classroom",
-    "description": "We are the ACM Student Chapter- KJSCE’s official arm of the world’s largest computing society.\n\nThis September, we bring back our signature seminar:\n\n✨ BEYOND THE CLASSROOM ✨\n\nAn event designed to show you what truly sets achievers apart- how to build skills, mindset, and (international) credibility beyond academics.\n\n📝 Learn how to stand out beyond your grades\n\n🎓 Hear from those who’ve walked the path\n\n📰 Unlock the blueprint for success\n\nFreshers, this is where it begins. Your network, your mentors, and maybe even your future teammates are waiting for you here ‼️",
-    "imageUrl": "https://res.cloudinary.com/dz9lsudey/image/upload/v1767098894/BTC-2025_bqahnh.jpg",
-    "code": "btc-2025",
-    "day": "Monday",
-    "month": "Sep",
-    "date": "01",
-    "fullDate": "Monday, September 1, 2025",
-    "time": "5:00 PM - 7:00 PM",
-    "venue": "B113 SEMINAR HALL",
-    "gallery": [
-      "https://res.cloudinary.com/dz9lsudey/image/upload/v1767172224/btc25team_uphkkg.jpg"
-    ]
   }
 ]
