@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
-import { SiLeetcode, SiCodeforces, SiCodechef } from "react-icons/si";
+import { SiLeetcode } from "react-icons/si";
 
 const pastelColors = [
-  "bg-pink-500/20 text-pink-300 border-pink-500/50",
+  "bg-pink-500 text-pink-300 border-pink-500/50",
   "bg-blue-500/20 text-blue-300 border-blue-500/50",
   "bg-yellow-500/20 text-yellow-300 border-yellow-500/50",
   "bg-purple-500/20 text-purple-300 border-purple-500/50",
@@ -14,28 +13,33 @@ const pastelColors = [
   "bg-lime-500/20 text-lime-300 border-lime-500/50",
 ];
 
-const TeamSection = React.memo(({ team, isActive, direction }) => {
-  const [selectedMember, setSelectedMember] = useState(null);
-  useEffect(() => {
-    if (isActive) {
-      setSelectedMember(null);
-    }
-  }, [isActive]);
+export default function TeamSection({
+  team,
+  hoveredMemberId,
+  onHoverMember,
+  year,
+}) {
+  const selectedMember = hoveredMemberId
+    ? team.members.find((m) => m.id === hoveredMemberId)
+    : null;
+
   return (
-    <div className="w-full h-full flex flex-col justify-start pt-28 md:justify-center md:pt-0 p-8 md:p-12">
-      <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
-        <div className="flex flex-col space-y-6 lg:pr-12 order-2 lg:order-1 text-left justify-center min-h-[300px] md:min-h-[400px]">
+    <div className="w-full h-[90%] flex items-center justify-center p-4 md:p-8 md:h/full">
+      {/* Desktop Layout - Side by Side */}
+      <div className="hidden lg:grid max-w-7xl w-full grid-cols-2 gap-12 items-center">
+        {/* Details Section - Left side on desktop */}
+        <div className="flex flex-col space-y-6 pr-12 text-left justify-center min-h-[400px]">
           {!selectedMember ? (
             <div className="animate-fade-in-up">
               <div className="flex items-baseline space-x-2 mb-4">
                 <span className="text-sm font-bold tracking-widest uppercase text-cyan-500">
-                  Team Focus
+                  KJSSE ACM {year}
                 </span>
               </div>
-              <h2 className="text-4xl md:text-6xl lg:text-8xl font-black text-white tracking-tighter leading-none mb-4 md:mb-6 drop-shadow-2xl">
+              <h2 className="text-8xl font-black text-white tracking-tighter leading-none mb-6 drop-shadow-2xl">
                 {team.teamName}
               </h2>
-              <p className="text-lg md:text-2xl lg:text-3xl text-gray-300 font-light leading-relaxed">
+              <p className="text-3xl text-gray-300 font-light leading-relaxed">
                 {team.description}
               </p>
             </div>
@@ -44,29 +48,29 @@ const TeamSection = React.memo(({ team, isActive, direction }) => {
               <div className="flex items-baseline space-x-2 mb-2">
                 <span
                   className="text-sm font-bold tracking-widest uppercase text-gray-500 cursor-pointer hover:text-cyan-400 transition-colors"
-                  onClick={() => setSelectedMember(null)}
+                  onClick={() => onHoverMember?.(null)}
                 >
                   {team.teamName}
                 </span>
               </div>
-              <h2 className="text-3xl md:text-5xl lg:text-7xl font-bold text-white tracking-tight leading-none mb-2 drop-shadow-lg">
+              <h2 className="text-7xl font-bold text-white tracking-tight leading-none mb-2 drop-shadow-lg">
                 {selectedMember.name}
               </h2>
-              <p className="text-lg md:text-xl lg:text-2xl text-cyan-400 font-medium mb-6 md:mb-8">
+              <p className="text-2xl text-cyan-400 font-medium mb-8">
                 {selectedMember.role}
               </p>
 
-              <blockquote className="text-xl md:text-2xl lg:text-3xl font-serif italic text-gray-300 mb-6 leading-relaxed">
-                "{selectedMember.quote}"
+              <blockquote className="text-3xl font-serif italic text-gray-300 mb-6 leading-relaxed">
+                &ldquo;{selectedMember.quote}&rdquo;
               </blockquote>
 
-              <p className="text-gray-400 leading-relaxed text-base md:text-lg max-w-xl mb-6">
+              <p className="text-gray-400 leading-relaxed text-lg max-w-xl mb-6">
                 {selectedMember.bio}
               </p>
 
               {/* Social Links */}
               {selectedMember.links && (
-                <div className="flex gap-5 text-2xl md:text-3xl">
+                <div className="flex gap-5 text-3xl">
                   {selectedMember.links.github && (
                     <a
                       href={selectedMember.links.github}
@@ -131,34 +135,233 @@ const TeamSection = React.memo(({ team, isActive, direction }) => {
           )}
         </div>
 
-        {/* Right Column: Dynamic Flex Layout */}
-        <div className="order-1 lg:order-2 flex justify-center items-center">
-          <div className="flex flex-wrap justify-center gap-6 max-w-lg mx-auto p-4 md:m-16">
+        {/* Member Images Section - Right side on desktop */}
+        <div className="flex justify-center items-center">
+          <div className="flex flex-wrap justify-center gap-6 max-w-lg mx-auto p-4 m-16">
             {team.members.map((member, index) => {
-              const isSelected = selectedMember?.id === member.id;
+              const isSelected = hoveredMemberId === member.id;
               return (
-                <button
+                <div
                   key={member.id}
-                  onClick={() => setSelectedMember(member)}
-                  onMouseEnter={() => setSelectedMember(member)}
-                  className={`w-20 h-20 md:w-24 md:h-24 lg:w-32 lg:h-32 rounded-full flex items-center justify-center text-xl md:text-3xl font-bold transition-all duration-300 transform outline-none focus:outline-none border-2 ${
-                    isSelected
-                      ? "scale-110 shadow-[0_0_20px_rgba(6,182,212,0.4)] ring-2 ring-cyan-400 z-10 bg-cyan-900/40 border-cyan-400"
-                      : `scale-100 hover:scale-105 hover:shadow-lg opacity-80 hover:opacity-100 ${pastelColors[index % pastelColors.length]}`
-                  }`}
-                  aria-label={`Select ${member.name}`}
+                  className="flex flex-col items-center text-center w-32"
                 >
-                  <img
-                    src={member.imageUrl}
-                    alt={member.name}
-                    className="w-full h-full rounded-full object-cover"
-                  />
-                </button>
+                  <button
+                    onMouseEnter={() => onHoverMember?.(member.id)}
+                    onFocus={() => onHoverMember?.(member.id)}
+                    onClick={() => onHoverMember?.(member.id)}
+                    className={`w-32 h-32 rounded-full overflow-hidden flex items-center justify-center transition-all duration-300 border-2 outline-none focus:outline-none ${
+                      isSelected
+                        ? "scale-110 shadow-[0_0_20px_rgba(6,182,212,0.4)] ring-2 ring-cyan-400 z-10 bg-cyan-900/40 border-cyan-400"
+                        : `scale-100 hover:scale-105 hover:shadow-lg opacity-90 hover:opacity-100 ${pastelColors[index % pastelColors.length]}`
+                    }`}
+                    aria-label={`View ${member.name}'s details`}
+                    aria-pressed={isSelected}
+                    title={`${member.name}${member.role ? ` — ${member.role}` : ""}`}
+                  >
+                    {member.imageUrl ? (
+                      <img
+                        src={member.imageUrl}
+                        alt={member.name}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <span className="w-full h-full flex items-center justify-center text-2xl font-bold">
+                        {member.name
+                          ?.split(" ")
+                          .map((n) => n[0])
+                          .join("")
+                          .slice(0, 2)
+                          .toUpperCase()}
+                      </span>
+                    )}
+                  </button>
+                  <div className="mt-2">
+                    <p
+                      className={`text-sm font-semibold ${isSelected ? "text-white" : "text-gray-200"}`}
+                    >
+                      {member.name}
+                    </p>
+                    {member.role && (
+                      <p className="text-xs text-gray-400">{member.role}</p>
+                    )}
+                  </div>
+                </div>
               );
             })}
           </div>
         </div>
       </div>
+
+      {/* Mobile Layout - Stacked: Team Name -> Member Images -> Selected Person Details */}
+      <div className="lg:hidden max-w-7xl w-full flex flex-col gap-6">
+        {/* Top Section - Team Name (Always Visible) */}
+        <div className="text-center animate-fade-in-up">
+          <div className="flex justify-center items-baseline space-x-2 mb-3">
+            <span className="text-xs font-bold tracking-widest uppercase text-cyan-500">
+              KJSSE ACM {year}
+            </span>
+          </div>
+          <h2 className="text-3xl md:text-6xl font-black text-white tracking-tighter leading-none mb-3 drop-shadow-2xl">
+            {team.teamName}
+          </h2>
+          {!selectedMember && (
+            <p className="text-base md:text-2xl text-gray-300 font-light leading-relaxed">
+              {team.description}
+            </p>
+          )}
+        </div>
+
+        {/* Middle Section - Member Images */}
+        <div className="flex justify-center items-center">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6 max-w-lg mx-auto p-2 md:p-4">
+            {team.members.map((member, index) => {
+              const isSelected = hoveredMemberId === member.id;
+              return (
+                <div
+                  key={member.id}
+                  className="flex flex-col items-center text-center w-28 md:w-32"
+                >
+                  <button
+                    onClick={() => onHoverMember?.(member.id)}
+                    className={`w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden flex items-center justify-center transition-all duration-300 border-2 outline-none focus:outline-none ${
+                      isSelected
+                        ? "scale-110 shadow-[0_0_20px_rgba(6,182,212,0.4)] ring-2 ring-cyan-400 z-10 bg-cyan-900/40 border-cyan-400"
+                        : `scale-100 hover:scale-105 hover:shadow-lg opacity-90 hover:opacity-100 ${pastelColors[index % pastelColors.length]}`
+                    }`}
+                    aria-label={`View ${member.name}'s details`}
+                    aria-pressed={isSelected}
+                    title={`${member.name}${member.role ? ` — ${member.role}` : ""}`}
+                  >
+                    {member.imageUrl ? (
+                      <img
+                        src={member.imageUrl}
+                        alt={member.name}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <span className="w-full h-full flex items-center justify-center text-base md:text-2xl font-bold">
+                        {member.name
+                          ?.split(" ")
+                          .map((n) => n[0])
+                          .join("")
+                          .slice(0, 2)
+                          .toUpperCase()}
+                      </span>
+                    )}
+                  </button>
+                  <div className="mt-1 md:mt-2">
+                    <p
+                      className={`text-[10px] md:text-sm font-semibold ${isSelected ? "text-white" : "text-gray-200"}`}
+                    >
+                      {member.name}
+                    </p>
+                    {member.role && (
+                      <p className="text-[8px] md:text-xs text-gray-400">
+                        {member.role}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Bottom Section - Selected Person Details (Only when someone is selected) */}
+        {selectedMember && (
+          <div
+            key={selectedMember.id}
+            className="animate-fade-in-up text-center px-4 py-6 rounded-2xl mx-2"
+          >
+            {/* <span
+              className="text-xs font-bold tracking-widest uppercase text-gray-500 cursor-pointer hover:text-cyan-400 transition-colors"
+              onClick={() => onHoverMember?.(null)}
+            >
+              ← Back to {team.teamName}
+            </span>*/}
+
+            <h2 className="text-2xl md:text-4xl font-bold text-white tracking-tight leading-none mt-3 mb-1 drop-shadow-lg">
+              {selectedMember.name}
+            </h2>
+            <p className="text-base md:text-xl text-cyan-400 font-medium mb-4">
+              {selectedMember.role}
+            </p>
+
+            <blockquote className="text-lg md:text-xl font-serif italic text-gray-300 mb-4 leading-relaxed">
+              &ldquo;{selectedMember.quote}&rdquo;
+            </blockquote>
+
+            <p className="text-gray-400 leading-relaxed text-sm md:text-base max-w-xl mx-auto mb-4">
+              {selectedMember.bio}
+            </p>
+
+            {/* Social Links */}
+            {selectedMember.links && (
+              <div className="flex justify-center gap-4 text-xl md:text-2xl">
+                {selectedMember.links.github && (
+                  <a
+                    href={selectedMember.links.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-white transition-colors duration-300 hover:scale-110"
+                  >
+                    <FaGithub />
+                  </a>
+                )}
+                {selectedMember.links.linkedin && (
+                  <a
+                    href={selectedMember.links.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-400 hover:text-blue-300 transition-colors duration-300 hover:scale-110"
+                  >
+                    <FaLinkedin />
+                  </a>
+                )}
+                {selectedMember.links.leetcode && (
+                  <a
+                    href={selectedMember.links.leetcode}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-yellow-500 hover:text-yellow-400 transition-colors duration-300 hover:scale-110"
+                  >
+                    <SiLeetcode />
+                  </a>
+                )}
+                {selectedMember.links.codeforces && (
+                  <a
+                    href={selectedMember.links.codeforces}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className=" transition-colors duration-300 hover:scale-110"
+                  >
+                    <img
+                      src="./assets/cfc.svg"
+                      alt="CodeForces"
+                      className="w-6 h-6 md:w-7 md:h-7"
+                    />
+                  </a>
+                )}
+                {selectedMember.links.codechef && (
+                  <a
+                    href={selectedMember.links.codechef}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className=" transition-colors duration-300 hover:scale-110"
+                  >
+                    <img
+                      src="./assets/cc.jpeg"
+                      alt="CodeChef"
+                      className="w-6 h-6 md:w-7 md:h-7 rounded-full"
+                    />
+                  </a>
+                )}
+              </div>
+            )}
+          </div>
+        )}
+      </div>
+
       <style>{`
         .animate-fade-in-up {
           animation: fadeInUp 0.5s ease-out forwards;
@@ -176,6 +379,4 @@ const TeamSection = React.memo(({ team, isActive, direction }) => {
       `}</style>
     </div>
   );
-});
-
-export default TeamSection;
+}
