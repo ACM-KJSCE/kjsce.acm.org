@@ -1,86 +1,145 @@
 import { useParams, useNavigate } from "react-router";
 import events from "../data/events.json";
+import { MoveLeft, Calendar, MapPin, Clock, Tag } from "lucide-react";
 
 export default function EventDetails() {
-
   const params = useParams();
-  let event = events.find((x) => x.code === params.eventName);
+  const navigate = useNavigate();
+  const event = events.find((x) => x.code === params.eventName);
+
+  if (!event) return <div className="text-white text-center p-10">Event not found</div>;
 
   return (
-    <div className="flex flex-col w-full ">
-      <BackButton/>
-      <div className="flex flex-col lg:flex-row text-white ">
-        <div className="w-full lg:w-[50%] h-auto mt-[100px] mb-auto ml-0 lg:ml-[20px] flex flex-col items-center lg:items-start">
-          <img className="object-scale-down rounded-[5px] w-[80%] sm:w-[60%] lg:min-w-[30%] lg:max-w-[50%] ml-0 lg:ml-auto mr-0 lg:mr-[10%] hover:border-white border-[2px] cursor-pointer border-transparent duration-[1s]" 
-          src={event?.imageUrl} draggable={false} alt={event?.title}/>
-          {event?.sponsors ? (
-            <div className="w-[80%] sm:w-[60%] lg:min-w-[30%] lg:max-w-[50%] ml-0 lg:ml-auto mr-0 lg:mr-[10%] mt-[10px]">
-              <div className="text-center text-[18px] sm:text-[20px] font-semibold hover:underline cursor-pointer">
-                SPONSORS
+    <div className="min-h-screen bg-black/40 shadow-lg ring-1 ring-white/5 text-white p-4 md:p-8 font-sans">
+      <div className="max-w-7xl mx-auto">
+        <BackButton navigate={navigate} />
+
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 mt-6">
+          {/* Left Column - Sidebar */}
+          <div className="w-full lg:w-[350px] shrink-0 space-y-8">
+            {/* Event Poster */}
+            <div className="w-full">
+              <img
+                src={event.imageUrl}
+                alt={event.title}
+                className="w-full rounded-xl shadow-lg border border-white/10"
+                draggable={false}
+              />
+            </div>
+
+            {/* Sponsors Section */}
+            {event.sponsors && event.sponsors.length > 0 && (
+              <div className="rounded-xl border border-white/5 shadow-inner">
+                <h3 className="text-gray-400 font-bold mb-4 text-xs uppercase tracking-widest flex items-center gap-2">
+                  Proud Sponsors
+                </h3>
+                <div className="flex flex-col gap-3">
+                  {event.sponsors.map((sponsor, index) => (
+                    <div key={index} className="group flex items-center gap-4 bg-white/5 hover:bg-white/10 p-3 rounded-lg transition-all duration-300 border border-white/5 hover:border-white/20">
+                      <div className="h-auto w-16 rounded-lg flex items-center justify-center">
+                        <img
+                          src={sponsor.url}
+                          alt={sponsor.name}
+                          className="max-h-full max-w-full object-contain"
+                          draggable={false}
+                        />
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-white font-medium text-sm group-hover:text-cyan-300 transition-colors">{sponsor.name}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <div className="flex flex-wrap justify-center gap-4 align-middle">
-                {event?.sponsors?.map((x, y) => (
-                  <div className="w-[70px] sm:w-[90px] mt-auto mb-auto" key={y}>
-                    <img src={x} className="hover:border-white border-[2px] cursor-pointer border-transparent duration-[1s] rounded-[5px]" draggable={false} alt="sponsor logo"/>
+            )}
+          </div>
+
+          {/* Right Column - Main Content */}
+          <div className="flex-1">
+            {/* Title */}
+            <h1 className="text-4xl md:text-5xl font-bold mb-8 leading-tight">
+              {event.title}
+            </h1>
+
+            {/* Event Meta Data */}
+            <div className="space-y-6 mb-10">
+              {/* Date & Time */}
+              <div className="flex items-start gap-4">
+                <div className="p-3 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 shadow-lg shadow-white/10 flex items-center justify-center">
+                  <Calendar className="w-6 h-6 text-gray-300" />
+                </div>
+                <div>
+                  <div className="font-semibold text-lg">{event.fullDate}</div>
+                  <div className="text-gray-400">{event.time}</div>
+                </div>
+              </div>
+
+              {/* Venue */}
+              {event.venue && (
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 shadow-lg shadow-white/10 flex items-center justify-center">
+                    <MapPin className="w-6 h-6 text-gray-200" />
                   </div>
-                ))}
+                  <div>
+                    <div className="font-semibold text-lg flex items-center gap-2">
+                      {event.venue}
+                    </div>
+                    <div className="text-gray-400">Mumbai, Maharashtra</div>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Status Card */}
+            <div className="p-3 bg-white/5 hover:bg-white/10 rounded-lg transition-all duration-300 border border-white/5 hover:border-white/20 flex flex-col items-center justify-center relative overflow-hidden mb-8">
+              <h3 className="text-xl font-bold mb-1">Thank You for Joining</h3>
+              <p className="text-gray-400 text-sm">We hope you enjoyed the event!</p>
+            </div>
+
+
+            {/* About Section */}
+            <div>
+              <h2 className="text-gray-400 font-semibold mb-4 text-sm uppercase tracking-wider">
+                About Event
+              </h2>
+              <div className="prose prose-invert max-w-none text-gray-300 whitespace-pre-wrap leading-relaxed">
+                <h3 className="text-xl font-semibold text-white mb-2 uppercase tracking-wide">
+                  {event.title.toUpperCase()}
+                </h3>
+                {event.description}
               </div>
-            </div>) : ("")}
-        </div>
-        <div className="w-full lg:w-[50%] mt-[80px] px-4 lg:px-0">
-          <div className="text-[32px] sm:text-[48px] lg:text-[60px] font-semibold p-0 m-0 cursor-pointer hover:underline">
-            {event?.title}
-          </div>
-          <div className="flex mb-[30px] mt-[30px] font-semibold h-fit flex-wrap">
-            <div className="h-[50px] flex flex-col w-[50px] rounded-[5px] text-center font-semibold border-cyan-400 border-[2px] border-t-0">
-              <div className="bg-cyan-400 rounded-t-[4px] uppercase">
-                {event?.month}
+            </div>
+
+            {/* Gallery Section if exists */}
+            {event.gallery && (
+              <div className="mt-12 pt-8 border-t border-white/10">
+                <h2 className="text-2xl font-bold mb-6">Event Gallery</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {event.gallery.map((img, idx) => (
+                    <img key={idx} src={img} className="rounded-lg hover:scale-105 transition-transform duration-300 border border-white/10" alt="Gallery" />
+                  ))}
+                </div>
               </div>
-              <div className="">{event?.date}</div>
-            </div>
-            <div className="ml-[20px] rounded-[5px] hover:underline cursor-pointer">
-              <div className="">
-                {event?.fullDate} {event?.venue}
-              </div>
-              <div className="">{event?.time}</div>
-            </div>
-          </div>
-          <div className="">
-            <div className="text-cyan-400 font-semibold text-[24px] sm:text-[30px] hover:underline cursor-pointer mb-[10px]">
-              About Event
-            </div>
-            <div className="text-[16px] sm:text-[18px] whitespace-pre-wrap leading-tight font-semibold">
-              {event?.description}
-            </div>
+            )}
+
           </div>
         </div>
       </div>
-     {event.gallery ?      <div className="w-full text-center py-[20px] flex flex-col">
-        <div className="mb-[50px] text-[50px] font-semibold text-white sm:text-[60px]">Event Gallery</div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-[20px] px-[20px]">
-          {event?.gallery?.map((x, y) => (
-            <img key={y} src={x} className="w-full max-w-[300px] m-auto rounded-[5px] cursor-pointer hover:border-white border-[2px] border-transparent duration-300 mb-[40px]"/>
-          ))}
-        </div>
-     </div>:""} 
-
-
     </div>
   );
 }
 
-function BackButton() {
-  const navigate = useNavigate();
-
+function BackButton({ navigate }) {
   return (
-    <div className="fixed">
-      <button className="mt-[15px] ml-[15px] flex rounded-[5px] bg-white/5 backdrop-blur-md text-[15px] p-[5px] pl-[10px] pr-[10px] font-semibold text-white/80 border-[1px] border-white/10 hover:bg-white/10 hover:text-white hover:border-white/20 duration-300" onClick={()=>{
-        navigate(-1)
-      }}>
-        ← Go Back
-      </button>
-    </div>
-    
+    <button
+      onClick={() => navigate("/")}
+      className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-4 group"
+    >
+      <div className="p-1 rounded-full group-hover:bg-white/10 transition-colors">
+        <MoveLeft className="w-5 h-5" />
+      </div>
+      <span className="font-medium">Back to Events</span>
+    </button>
   );
 }
 
