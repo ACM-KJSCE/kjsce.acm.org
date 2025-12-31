@@ -1,0 +1,524 @@
+[
+  {
+    "teamId": "t1",
+    "teamName": "CORES",
+    "description": "Leading the chapter with vision and dedication.",
+    "members": [
+      {
+        "id": "c1",
+        "name": "Amaan Shaikh",
+        "role": "Chairperson",
+        "imageUrl": "/assets/Chairperson_Amaan_Shaikh.jpg",
+        "initials": "AS",
+        "bio": "Leading the ACM chapter to new heights.",
+        "quote": "Leadership is action, not position.",
+        "links": {
+          "codechef": "https://www.codechef.com/users/amaanshxikh",
+          "github": "https://github.com/amaanshxikh",
+          "leetcode": "https://leetcode.com/u/amaanshxikh",
+          "codeforces": "https://codeforces.com/profile/amaanshxikh"
+        }
+      },
+      {
+        "id": "c2",
+        "name": "Joyeeta Basu",
+        "role": "Vice Chairperson",
+        "imageUrl": "/assets/Vice_Chairperson_Joyeeta_Basu.jpg",
+        "initials": "JB",
+        "bio": "Dedicated to fostering a collaborative environment.",
+        "quote": "Collaboration fuels innovation.",
+        "links": {
+          "codechef": "https://www.codechef.com/users/username",
+          "github": "https://github.com/Joyeeeeta",
+          "leetcode": "https://leetcode.com/u/username",
+          "codeforces": "https://codeforces.com/profile/username"
+        }
+      },
+      {
+        "id": "c3",
+        "name": "Pratham Shenoy",
+        "role": "Secretary",
+        "imageUrl": "/assets/Secretary_Pratham_Shenoy.jpg",
+        "initials": "PS",
+        "bio": "Ensuring smooth operations and communication.",
+        "quote": "Efficiency is key.",
+        "links": {
+          "codechef": "https://www.codechef.com/users/username",
+          "github": "https://github.com/Prathamshenoy28",
+          "leetcode": "https://leetcode.com/u/prathams_28",
+          "codeforces": "https://codeforces.com/profile/username"
+        }
+      },
+      {
+        "id": "c4",
+        "name": "Asmi Rode",
+        "role": "Treasurer",
+        "imageUrl": "/assets/Treasurer_Asmi.jpeg",
+        "initials": "AR",
+        "bio": "Managing resources for sustainable growth.",
+        "quote": "Integrity in every transaction.",
+        "links": {
+          "codechef": "https://www.codechef.com/users/username",
+          "github": "https://github.com/asmirode",
+          "leetcode": "https://leetcode.com/u/a_1824",
+          "codeforces": "https://codeforces.com/profile/username"
+        }
+      }
+    ]
+  },
+  {
+    "teamId": "t2",
+    "teamName": "Tech Team",
+    "description": "Innovating with code and building the future.",
+    "members": [
+      {
+        "id": "tc1",
+        "name": "Minav Karia",
+        "role": "Tech Head",
+        "imageUrl": "/assets/Tech_Head_Minav_Karia.jpeg",
+        "initials": "MK",
+        "bio": "Driving technical excellence and innovation.",
+        "quote": "Code is poetry.",
+        "links": {
+          "codechef": "https://www.codechef.com/users/minavkaria7",
+          "github": "https://github.com/MinavKaria",
+          "leetcode": "https://leetcode.com/u/MinavKaria",
+          "codeforces": "https://codeforces.com/profile/MrColeno"
+        }
+      },
+      {
+        "id": "tc2",
+        "name": "Viraj Pawar",
+        "role": "Tech Team Member",
+        "imageUrl": "/assets/Tech_Team_Viraj_pawar.png",
+        "initials": "VP",
+        "bio": "Passionate about full-stack development.",
+        "quote": "Keep building.",
+        "links": {
+          "codechef": "https://www.codechef.com/users/viraj-ap",
+          "github": "https://github.com/viraj-ap",
+          "leetcode": "https://leetcode.com/u/username",
+          "codeforces": "https://codeforces.com/profile/username"
+        }
+      },
+      {
+        "id": "tc3",
+        "name": "Om Thanage",
+        "role": "Tech Team Member",
+        "imageUrl": "/assets/Tech_Team_Om_Thanage.jpg",
+        "initials": "OT",
+        "bio": "Exploring new technologies and frameworks.",
+        "quote": "Always learning.",
+        "links": {
+          "codechef": "https://www.codechef.com/users/omitron",
+          "github": "https://github.com/Om-Thanage",
+          "leetcode": "https://leetcode.com/u/omithon",
+          "codeforces": "https://codeforces.com/profile/om.thanage"
+        }
+      },
+      {
+        "id": "tc4",
+        "name": "Ashutosh Dosi",
+        "role": "Tech Team Member",
+        "imageUrl": "/assets/Tech_Team_Ashutosh_Dosi.jpg",
+        "initials": "AD",
+        "bio": "Solving problems with algorithmic thinking.",
+        "quote": "Logic serves life.",
+        "links": {
+          "codechef": "https://www.codechef.com/users/ashutoshdosi",
+          "github": "https://github.com/ashutoshDosi",
+          "leetcode": "https://leetcode.com/u/ashutoshDosi",
+          "codeforces": "https://codeforces.com/profile/ashutoshdosi"
+        }
+      },
+      {
+        "id": "tc5",
+        "name": "Yash Joshi",
+        "role": "Tech Team Member",
+        "imageUrl": "/assets/Tech_Team_Yash_Joshi.jpg",
+        "initials": "YJ",
+        "bio": "Crafting clean and efficient code.",
+        "quote": "Simplicity is brilliance.",
+        "links": {
+          "codechef": "https://www.codechef.com/users/pluto55",
+          "github": "https://github.com/yash-shj",
+          "leetcode": "https://leetcode.com/u/pluto-lc",
+          "codeforces": "https://codeforces.com/profile/pluto09"
+        }
+      },
+      {
+        "id": "tc6",
+        "name": "Aryan Movalia",
+        "role": "FY Rep-Tech Team",
+        "imageUrl": "/assets/Tech_Team_Aryan_Movalia.jpg",
+        "initials": "AM",
+        "bio": "Enthusiastic about starting the tech journey.",
+        "quote": "Hello World.",
+        "links": {
+          "codechef": "https://www.codechef.com/users/aryan65828965",
+          "github": "https://github.com/aryan6582896578",
+          "leetcode": "https://leetcode.com/u/aryan6582896578",
+          "codeforces": "https://codeforces.com/profile/aryan6582896578"
+        }
+      }
+    ]
+  },
+  {
+    "teamId": "t3",
+    "teamName": "Creative Team",
+    "description": "Visualizing ideas and designing experiences.",
+    "members": [
+      {
+        "id": "cr1",
+        "name": "Namit Kale",
+        "role": "Creative Head",
+        "imageUrl": "/assets/Creative_Head_Namit_Kale.jpg",
+        "initials": "NK",
+        "bio": "Leading the creative vision.",
+        "quote": "Design is intelligence made visible.",
+        "links": {
+          "codechef": "https://www.codechef.com/users/username",
+          "github": "https://github.com/chondfish ",
+          "leetcode": "https://leetcode.com/u/username",
+          "codeforces": "https://codeforces.com/profile/username"
+        }
+      },
+      {
+        "id": "cr2",
+        "name": "Aaryan Sharma",
+        "role": "Creative Team Member",
+        "imageUrl": "/assets/Creative_Team_Aaryan_Sharma.png",
+        "initials": "AS",
+        "bio": "Adding color to ideas.",
+        "quote": "Creativity takes courage.",
+        "links": {
+          "codechef": "https://www.codechef.com/users/aaryan_96",
+          "github": "https://github.com/Aaryan-Sharma-5",
+          "leetcode": "https://leetcode.com/u/AaryanS25",
+          "codeforces": "https://codeforces.com/profile/aaryan_25"
+        }
+      },
+      {
+        "id": "cr3",
+        "name": "Aashna Parikh",
+        "role": "Creative Team Member",
+        "imageUrl": "/assets/Creative team_Aashna Parikh.jpg",
+        "initials": "AP",
+        "bio": "Designing with purpose.",
+        "quote": "Art requires imagination.",
+        "links": {
+          "codechef": "https://www.codechef.com/users/aashnaparikh",
+          "github": "https://github.com/aashnaparikh1e",
+          "leetcode": "https://leetcode.com/u/username",
+          "codeforces": "https://codeforces.com/profile/aashnaparikh"
+        }
+      },
+      {
+        "id": "cr4",
+        "name": "Vidita Hassani",
+        "role": "Creative Team Member",
+        "imageUrl": "/assets/Creative Team_Vidita Hassani.PNG",
+        "initials": "VH",
+        "bio": "Crafting visual stories.",
+        "quote": "Stories matter.",
+        "links": {
+          "codechef": "https://www.codechef.com/users/viditah",
+          "github": "https://github.com/vidita14",
+          "leetcode": "https://leetcode.com/u/username",
+          "codeforces": "https://codeforces.com/profile/username"
+        }
+      },
+      {
+        "id": "cr5",
+        "name": "Sai Bhadane",
+        "role": "FY Rep-Creative Team",
+        "imageUrl": "/assets/Creative_Team_Sai_Bhadane.jpg",
+        "initials": "SB",
+        "bio": "Fresh perspective on design.",
+        "quote": "Design is a journey.",
+        "links": {
+          "codechef": "https://www.codechef.com/users/saiibhadane",
+          "github": "https://github.com/sb-byte",
+          "leetcode": "https://leetcode.com/u/saiibhadane",
+          "codeforces": "https://codeforces.com/profile/username"
+        }
+      },
+      {
+        "id": "cr6",
+        "name": "Samridha Das",
+        "role": "FY Rep-Creative Team",
+        "imageUrl": "/assets/Creative_Team_Samridha_Das.jpg",
+        "initials": "SD",
+        "bio": "Exploring creative boundaries.",
+        "quote": "Create to inspire.",
+        "links": {
+          "codechef": "https://www.codechef.com/users/samridha_24",
+          "github": "https://github.com/samridha24",
+          "leetcode": "https://leetcode.com/u/samridha_d24",
+          "codeforces": "https://codeforces.com/profile/samridha.das24"
+        }
+      }
+    ]
+  },
+  {
+    "teamId": "t4",
+    "teamName": "Marketing Team",
+    "description": "Spreading the word and building the brand.",
+    "members": [
+      {
+        "id": "mk1",
+        "name": "Tejashya Mehta",
+        "role": "Marketing Head",
+        "imageUrl": "/assets/Marketing_Head_Tejashya_Mehta.jpg",
+        "initials": "TM",
+        "bio": "Leading marketing strategies.",
+        "quote": "Marketing is storytelling.",
+        "links": {
+          "codechef": "https://www.codechef.com/users/username",
+          "github": "https://github.com/tejashyamehta ",
+          "leetcode": "https://leetcode.com/u/username",
+          "codeforces": "https://codeforces.com/profile/username"
+        }
+      },
+      {
+        "id": "mk2",
+        "name": "Surabhi Khutal",
+        "role": "Marketing Team Member",
+        "imageUrl": "/assets/Marketing_Team_Surabhi_Khutal.jpg",
+        "initials": "SK",
+        "bio": "Connecting with the audience.",
+        "quote": "Connect and convert.",
+        "links": {
+          "codechef": "https://www.codechef.com/users/surabhie09",
+          "github": "https://github.com/surabhie09",
+          "leetcode": "https://leetcode.com/u/username",
+          "codeforces": "https://codeforces.com/profile/surabhie09"
+        }
+      },
+      {
+        "id": "mk3",
+        "name": "Parth Tendulkar",
+        "role": "Marketing Team Member",
+        "imageUrl": "/assets/Marketing_Team_Parth_Tendulkar.jpg",
+        "initials": "PT",
+        "bio": "Creating engaging campaigns.",
+        "quote": "Engagement is key.",
+        "links": {
+          "codechef": "https://www.codechef.com/users/hardy_elephant",
+          "github": "https://github.com/partht0902",
+          "leetcode": "https://leetcode.com/u/username",
+          "codeforces": "https://codeforces.com/profile/username"
+        }
+      },
+      {
+        "id": "mk4",
+        "name": "Rishi Dadia",
+        "role": "FY Rep-Marketing Team",
+        "imageUrl": "/assets/Marketing_Team_Rishi_Dadia.jpeg",
+        "initials": "RD",
+        "bio": "Learning the art of marketing.",
+        "quote": "Learn and grow.",
+        "links": {
+          "codechef": "https://www.codechef.com/users/rishidadia",
+          "github": "https://github.com/rishidadia",
+          "leetcode": "https://leetcode.com/u/rishi_dadia",
+          "codeforces": "https://codeforces.com/profile/rishid"
+        }
+      },
+      {
+        "id": "mk5",
+        "name": "Shrish Alva",
+        "role": "FY Rep-Marketing Team",
+        "imageUrl": "/assets/Marketing_Team_Shrish_Alva.jpg",
+        "initials": "SA",
+        "bio": "Bringing fresh ideas to marketing.",
+        "quote": "Ideas change everything.",
+        "links": {
+          "codechef": "https://www.codechef.com/users/shrishalva",
+          "github": "https://github.com/Shrish27",
+          "leetcode": "https://leetcode.com/u/username",
+          "codeforces": "https://codeforces.com/profile/shrish.alva"
+        }
+      }
+    ]
+  },
+  {
+    "teamId": "t5",
+    "teamName": "Public Relations Team",
+    "description": "Building and maintaining relationships.",
+    "members": [
+      {
+        "id": "pr1",
+        "name": "Bhoomi Sanghvi",
+        "role": "PR Head",
+        "imageUrl": "/assets/PR_Head_Bhoomi Sanghvi.jpeg",
+        "initials": "BS",
+        "bio": "Managing public relations.",
+        "quote": "Trust is earned.",
+        "links": {
+          "codechef": "https://www.codechef.com/users/username",
+          "github": "https://github.com/bhoomins ",
+          "leetcode": "https://leetcode.com/u/bhoomisanghvi",
+          "codeforces": "https://codeforces.com/profile/username"
+        }
+      },
+      {
+        "id": "pr2",
+        "name": "Aksh Maheshwari",
+        "role": "PR Team Member",
+        "imageUrl": "/assets/PR_Team_Aksh_Maheshwari.jpg",
+        "initials": "AM",
+        "bio": "Communicating our values.",
+        "quote": "Communication is art.",
+        "links": {
+          "codechef": "https://www.codechef.com/users/AkshMaheshwari",
+          "github": "https://github.com/AkshMaheshwari",
+          "leetcode": "https://leetcode.com/u/aksh_m",
+          "codeforces": "https://codeforces.com/profile/aksh.maheshwari05"
+        }
+      },
+      {
+        "id": "pr3",
+        "name": "Suryanshu Banerjee",
+        "role": "PR Team Member",
+        "imageUrl": "/assets/PR_Team_Suryanshu_Banerjee.png",
+        "initials": "SB",
+        "bio": "Fostering community.",
+        "quote": "Community first.",
+        "links": {
+          "codechef": "https://www.codechef.com/users/suryanshub",
+          "github": "https://github.com/SuryanshuBanerjee",
+          "leetcode": "https://leetcode.com/u/SuryanshuBanerjee",
+          "codeforces": "https://codeforces.com/profile/GhostFace_S"
+        }
+      },
+      {
+        "id": "pr4",
+        "name": "Netal Gupta",
+        "role": "FY Rep-PR Team",
+        "imageUrl": "/assets/PR_Team_Netal_Gupta.jpg",
+        "initials": "NG",
+        "bio": "Connecting with new members.",
+        "quote": "Connect to create.",
+        "links": {
+          "codechef": "https://www.codechef.com/users/username",
+          "github": "https://github.com/netalgupta",
+          "leetcode": "https://leetcode.com/u/username",
+          "codeforces": "https://codeforces.com/profile/username"
+        }
+      },
+      {
+        "id": "pr5",
+        "name": "Parth Panwar",
+        "role": "FY Rep-PR Team",
+        "imageUrl": "/assets/PR_Team_Parth_Panwar.jpg",
+        "initials": "PP",
+        "bio": "Representing the first years.",
+        "quote": "Representation matters.",
+        "links": {
+          "codechef": "https://www.codechef.com/users/parthpanwar",
+          "github": "https://github.com/parthpanwar",
+          "leetcode": "https://leetcode.com/u/parthpanwar",
+          "codeforces": "https://codeforces.com/profile/parthpanwar"
+        }
+      }
+    ]
+  },
+  {
+    "teamId": "t6",
+    "teamName": "Operations Team",
+    "description": "Executing plans and managing logistics.",
+    "members": [
+      {
+        "id": "op1",
+        "name": "Ananya Pal",
+        "role": "Operations Head",
+        "imageUrl": "/assets/Operations_Head_Ananya_Pal.jpg",
+        "initials": "AP",
+        "bio": "Overseeing operations.",
+        "quote": "Efficiency is doing things right.",
+        "links": {
+          "codechef": "https://www.codechef.com/users/username",
+          "github": "https://github.com/2004kh ",
+          "leetcode": "https://leetcode.com/u/username",
+          "codeforces": "https://codeforces.com/profile/username"
+        }
+      },
+      {
+        "id": "op2",
+        "name": "Vedant Walunj",
+        "role": "Operations Team Member",
+        "imageUrl": "/assets/Operations_Team_Vedant_Walunj.jpg",
+        "initials": "VW",
+        "bio": "Ensuring logistical support.",
+        "quote": "Logistics win wars.",
+        "links": {
+          "codechef": "https://www.codechef.com/users/vedantwalunj",
+          "github": "https://github.com/vedant1317",
+          "leetcode": "https://leetcode.com/u/",
+          "codeforces": "https://codeforces.com/profile/vedantwalunj1317"
+        }
+      },
+      {
+        "id": "op3",
+        "name": "Palak Chandak",
+        "role": "Operations Team Member",
+        "imageUrl": "/assets/Operation_team_Palak_Chandak.png",
+        "initials": "PC",
+        "bio": "Coordinating events.",
+        "quote": "Events create memories.",
+        "links": {
+          "codechef": "https://www.codechef.com/users/aided_goal_99",
+          "github": "https://github.com/palakchandak8",
+          "leetcode": "https://leetcode.com/u/username",
+          "codeforces": "https://codeforces.com/profile/username"
+        }
+      },
+      {
+        "id": "op4",
+        "name": "Anushka Shekhar",
+        "role": "Operations Team Member",
+        "imageUrl": "/assets/Operations_Team_Anushka.jpg",
+        "initials": "AS",
+        "bio": "Supporting the team.",
+        "quote": "Support is strength.",
+        "links": {
+          "codechef": "https://www.codechef.com/users/username",
+          "github": "https://github.com/anushkashekhar1 ",
+          "leetcode": "https://leetcode.com/u/username",
+          "codeforces": "https://codeforces.com/profile/username"
+        }
+      },
+      {
+        "id": "op5",
+        "name": "Sudarshan Achar",
+        "role": "FY Rep-Operations Team",
+        "imageUrl": "/assets/Operations_Team_Sudarshan.jpg",
+        "initials": "SA",
+        "bio": "Ready to operate.",
+        "quote": "Action speaks louder.",
+        "links": {
+          "codechef": "https://www.codechef.com/users/buffy_quilt_91",
+          "github": "https://github.com/SudarshanAchar",
+          "leetcode": "https://leetcode.com/u/username",
+          "codeforces": "https://codeforces.com/profile/username"
+        }
+      },
+      {
+        "id": "op6",
+        "name": "Dhruv Dhariwal",
+        "role": "FY Rep-Operatons Team",
+        "imageUrl": "/assets/Operations_Team_Dhruv_Dhariwal.png",
+        "initials": "DD",
+        "bio": "Learning operations.",
+        "quote": "Learn by doing.",
+        "links": {
+          "codechef": "https://www.codechef.com/users/idhruvdhariwal",
+          "github": "https://github.com/idhruvdhariwal",
+          "leetcode": "https://leetcode.com/u/username",
+          "codeforces": "https://codeforces.com/profile/username"
+        }
+      }
+    ]
+  }
+]
