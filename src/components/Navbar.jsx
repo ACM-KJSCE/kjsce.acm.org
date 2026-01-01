@@ -60,9 +60,6 @@ const Navbar = () => {
             <li className="cursor-pointer hover:text-white" onClick={() => handleScrollTo("events")}>
               Events
             </li>
-            <li className="cursor-pointer hover:text-white" onClick={() => handleScrollTo("sponsors")}>
-              Sponsors
-            </li>
             <li className="cursor-pointer hover:text-white" onClick={() => handleScrollTo("our-team")}>
               Our Team
             </li>
