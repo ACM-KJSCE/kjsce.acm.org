@@ -1,7 +1,7 @@
-# The KJSCE ACM Student Chapter 
+# The KJSSE ACM Student Chapter 
 ---
 
-### 🌐 [KJSCE ACM Website](https://kjsce.acm.org/)
+### 🌐 [KJSSE ACM Website](https://kjsce.acm.org/)
 
 
 
