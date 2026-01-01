@@ -3,6 +3,7 @@ import sampleArcs from "../data/SampleArcs";
 import globeConfig from "../data/GlobeConfig";
 import "./styles/Hero.css";
 import { ShaderGradientCanvas, ShaderGradient } from "@shadergradient/react";
+import { WavyBackgroundDemo } from "./WavyBackground";
 
 const World = React.lazy(() => import("./ui/globe"));
 
@@ -10,6 +11,7 @@ function Hero() {
   return (
     <section className="w-full flex justify-center px-4 md:px-4 lg:px-4">
       {/* Rounded Gradient Section */}
+      {/* <WavyBackgroundDemo/> */}
       <div className="relative w-full max-w-7xl h-[85vh] rounded-3xl overflow-hidden">
         {/* Shader Gradient */}
         <ShaderGradientCanvas
@@ -51,6 +53,7 @@ function Hero() {
                   src="/logo_withoutbg.png"
                   alt="KJSCE ACM"
                   className="w-36 md:w-44 h-34 bg-black rounded-xl p-2"
+                  draggable={false}
                 />
               </div>
 

@@ -15,9 +15,9 @@ function AboutUs() {
         {/* <div className="h-64 w-20 bg-blue-600 blur-[90px] absolute top-[70rem] mt-96 right-0"></div> */}
 
         <p className='text-1xl md:text-2xl text-white md:w-1/2 text-justify'>
-          Welcome to KJSCE ACM, where caffeine fuels ideas, bugs are just happy accidents, and tech dreams take shape!
+          Welcome to KJSSE ACM, where caffeine fuels ideas, bugs are just happy accidents, and tech dreams take shape!
           We're the cool new kids on campus. From cracking code to cracking jokes, we're all about learning, growing, and making things happen.
-          At KJSCE ACM, our mantra is simple: together we strive, together we achieve..... and maybe have a little too much fun along the way!
+          At KJSSE ACM, our mantra is simple: together we strive, together we achieve..... and maybe have a little too much fun along the way!
         </p>
       </div>
         <img src='team.jpg' alt='About Us' className='relative z-10 md:w-2/3 w-11/12 rounded-2xl md:mt-12 mt-0 about' />

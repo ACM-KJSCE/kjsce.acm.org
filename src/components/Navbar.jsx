@@ -45,6 +45,7 @@ const Navbar = () => {
               alt="Logo"
               className="object-contain cursor-pointer h-8 md:h-12"
               onClick={handleHomeClick}
+              draggable={false}
             />
           </div>
 

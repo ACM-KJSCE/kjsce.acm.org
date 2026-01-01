@@ -8,7 +8,7 @@ const Footer = () => {
     >
       {/* Background Giant Text */}
       <h1 className="absolute bottom-0 left-1/2 -translate-x-1/2 text-[18vw] font-extrabold tracking-tight text-blue-600/30 select-none pointer-events-none whitespace-nowrap">
-        ACM-KJSCE
+        ACM-KJSSE
       </h1>
 
       {/* Main Content */}
@@ -37,7 +37,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <MapPin className="w-5 h-5 text-blue-400" />
-                <span>KJ Somaiya College of Engineering, B-413</span>
+                <span>KJ Somaiya School of Engineering, B-413</span>
               </li>
             </ul>
           </div>
@@ -49,7 +49,7 @@ const Footer = () => {
             </h2>
             <div className="flex gap-8">
               <a
-                href="https://instagram.com/kjsce_acm"
+                href="https://www.instagram.com/kjsse_acm/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:scale-110 transition-transform"
@@ -73,10 +73,10 @@ const Footer = () => {
         {/* Footer Bottom */}
         <div className="relative z-10 border-t border-white/20 pt-8 text-center">
           <p className="text-base font-semibold text-[#e6f2ff] mb-1">
-            Made with ❤️ by ACM-KJSCE
+            Made with ❤️ by ACM-KJSSE
           </p>
           <p className="text-sm text-gray-400">
-            © {new Date().getFullYear()} ACM-KJSCE. All rights reserved.
+            © {new Date().getFullYear()} ACM-KJSSE. All rights reserved.
           </p>
         </div>
       </div>

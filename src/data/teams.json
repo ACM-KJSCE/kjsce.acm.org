@@ -160,6 +160,36 @@
           "leetcode": "https://leetcode.com/u/aryan6582896578",
           "codeforces": "https://codeforces.com/profile/aryan6582896578"
         }
+      },
+      {
+        "id": "tc7",
+        "name": "Rayan Memon",
+        "role": "FY Rep-Tech Team",
+        "imageUrl": "/assets/Tech_Team_Rayan_Memon.jpg",
+        "initials": "RM",
+        "bio": "Focused on learning, building, and contributing to the tech team.",
+        "quote": "Learn. Build. Repeat.",
+        "links": {
+          "codechef": "https://www.codechef.com/users/rayanmemon",
+          "github": "https://github.com/Rayanmemon",
+          "leetcode": "https://leetcode.com/u/Rayan_Memon",
+          "codeforces": "https://codeforces.com/profile/Rayan_14"
+        }
+      },
+      {
+        "id": "tc8",
+        "name": "Nikunj Rathi",
+        "role": "FY Rep-Tech Team",
+        "imageUrl": "/assets/Tech_Team_Nikunj_Rathi.jpg",
+        "initials": "NR",
+        "bio": "Passionate about problem-solving and competitive programming.",
+        "quote": "Consistency beats talent.",
+        "links": {
+          "codechef": "https://www.codechef.com/users/nikunj_1906",
+          "github": "https://github.com/inikunjrathi",
+          "leetcode": "https://leetcode.com/u/username",
+          "codeforces": "https://codeforces.com/profile/username"
+        }
       }
     ]
   },
