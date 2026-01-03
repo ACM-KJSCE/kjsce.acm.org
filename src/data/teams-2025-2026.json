@@ -287,20 +287,6 @@
             "leetcode": "",
             "codeforces": ""
           }
-        },
-        {
-          "id": "mk6",
-          "name": "Veer Rathod",
-          "role": "Marketing Team FY-Rep",
-          "imageUrl": "https://picsum.photos/200/300",
-          "bio": "Bringing fresh ideas to marketing.",
-          "quote": "Ideas change everything.",
-          "links": {
-            "codechef": "",
-            "github": "",
-            "leetcode": "",
-            "codeforces": ""
-          }
         }
       ]
     },
@@ -377,22 +363,85 @@
             "leetcode": "",
             "codeforces": ""
           }
-        },
-        {
-          "id": "op6",
-          "name": "Het Faldu",
-          "role": "Operations Team FY-Rep",
-          "imageUrl": "https://picsum.photos/200/300",
-          "bio": "Ready to operate.",
-          "quote": "Action speaks louder.",
-          "links": {
-            "codechef": "",
-            "github": "",
-            "leetcode": "",
-            "codeforces": ""
-          }
         }
       ]
+    },
+    {
+  "teamName": "FY Representatives",
+  "description": "First-year representatives contributing across teams and learning through hands-on involvement.",
+  "members": [
+    {
+      "id": "fy1",
+      "name": "Ralston Dsouza",
+      "role": "Tech Team FY-Rep",
+      "imageUrl": "https://picsum.photos/200/300",
+      "bio": "I am nothing without hard work.",
+      "quote": "Built, not born.",
+      "links": {
+        "codechef": "https://www.codechef.com/users/stondral",
+        "github": "https://github.com/stondral",
+        "leetcode": "https://leetcode.com/u/stondral/",
+        "codeforces": ""
+      }
+    },
+    {
+      "id": "fy2",
+      "name": "Arya Sangle",
+      "role": "Tech Team FY-Rep",
+      "imageUrl": "https://picsum.photos/200/300",
+      "bio": null,
+      "quote": null,
+      "links": {
+        "codechef": "https://www.codechef.com/users/ambush_beam_52",
+        "github": "https://github.com/Aryaa-Sangle",
+        "leetcode": "",
+        "codeforces": ""
+      }
+    },
+    {
+      "id": "fy3",
+      "name": "Dhruv Chavan",
+      "role": "Creative Team FY-Rep",
+      "imageUrl": "https://picsum.photos/200/300",
+      "bio": null,
+      "quote": null,
+      "links": {
+        "codechef": "",
+        "github": "https://github.com/Dmcdhruv",
+        "leetcode": "",
+        "codeforces": ""
+      }
+    },
+    {
+      "id": "fy4",
+      "name": "Veer Rathod",
+      "role": "Marketing Team FY-Rep",
+      "imageUrl": "https://picsum.photos/200/300",
+      "bio": "Bringing fresh ideas to marketing.",
+      "quote": "Ideas change everything.",
+      "links": {
+        "codechef": "",
+        "github": "",
+        "leetcode": "",
+        "codeforces": ""
+      }
+    },
+    {
+      "id": "fy5",
+      "name": "Het Faldu",
+      "role": "Operations Team FY-Rep",
+      "imageUrl": "https://picsum.photos/200/300",
+      "bio": "Ready to operate.",
+      "quote": "Action speaks louder.",
+      "links": {
+        "codechef": "",
+        "github": "",
+        "leetcode": "",
+        "codeforces": ""
+      }
     }
+  ]
+}
+
   ]
 }
