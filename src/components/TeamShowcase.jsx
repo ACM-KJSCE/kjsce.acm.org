@@ -20,7 +20,7 @@ const TeamShowcase = () => {
     const selectedYearData = teamsData.find(
       (item) => item.year === selectedYear,
     );
-    return selectedYearData?.teamdeta || [];
+    return selectedYearData?.teamdata || [];
   }, [selectedYear]);
 
   const handleYearChange = (year) => {
