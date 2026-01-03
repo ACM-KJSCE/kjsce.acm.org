@@ -3,8 +3,8 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from "react-router";
 import './index.css'
 import App from './App.jsx'
-import EventDetails from './eventsComponent/EventDetails.jsx';
-import EventsPage from './eventsComponent/EventsPage.jsx';
+import EventDetails from './components/EventDetails.jsx';
+import EventsPage from './components/EventsPage.jsx';
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>

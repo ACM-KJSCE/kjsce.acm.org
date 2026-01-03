@@ -12,7 +12,7 @@ const Footer = () => {
       </h1>
 
       {/* Main Content */}
-      <div className="relative z-10 max-w-xl md:max-w-6xl mx-auto">
+      <div className="relative z-10 max-w-xl md:max-w-6xl mx-auto px-4">
         {/* Logo */}
         <div className="flex justify-center mb-10">
           <img src="logo_withoutbg.png" alt="Logo" className="h-24 md:h-40" />

@@ -31,9 +31,9 @@ function Hero() {
             positionX={-0.1}
             rotationY={130}
             rotationZ={70}
-            color1="#92dbe0"
-            color2="#0b7bff"
-            color3="#3865cf"
+            color1="#000000"
+            color2="#1e3c72"
+            color3="#000000"
             reflection={0.4}
             brightness={0.8}
             envPreset="city"
