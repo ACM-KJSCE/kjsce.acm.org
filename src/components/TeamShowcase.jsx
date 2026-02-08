@@ -108,11 +108,7 @@ const TeamShowcase = () => {
             key={team.teamId}
             id={`team-${team.teamId}`}
             ref={(el) => (sectionRefs.current[`team-${team.teamId}`] = el)}
-            className={`w-full transition-all duration-500 ease-out ${
-              activeSection === `team-${team.teamId}`
-                ? "scale-100 opacity-100"
-                : "scale-[0.97] opacity-60"
-            }`}
+            className="w-full transition-all duration-500 ease-out scale-100 opacity-100"
           >
             <TeamSection
               team={team}
