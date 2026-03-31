@@ -142,20 +142,7 @@
       "teamName": "Creative Team",
       "description": "Visualizing ideas and designing experiences.",
       "members": [
-        {
-          "id": "cr1",
-          "name": "Krutarth Ashar",
-          "role": "Creative Head",
-          "imageUrl": "https://picsum.photos/200/300",
-          "bio": "Leading the creative vision.",
-          "quote": "Design is intelligence made visible.",
-          "links": {
-            "codechef": "",
-            "github": "https://github.com/chondfish",
-            "leetcode": "",
-            "codeforces": ""
-          }
-        },
+
         {
           "id": "cr2",
           "name": "Sai Bhadane",
@@ -174,7 +161,7 @@
           "id": "cr3",
           "name": "Samridha Das",
           "role": "Creative Team Member",
-          "imageUrl": "https://picsum.photos/200/300",
+          "imageUrl": "https://res.cloudinary.com/dylcpkn2k/image/upload/v1774960560/Samridha_Das_tfkwsj.jpg",
           "bio": "Exploring creative boundaries.",
           "quote": "Create to inspire.",
           "links": {
@@ -211,6 +198,20 @@
             "leetcode": "",
             "codeforces": ""
           }
+        },
+        {
+          "id": "cr6",
+          "name": "Dhruv Chavan ",
+          "role": "FY Rep-Creative Team",
+          "imageUrl": "https://res.cloudinary.com/dylcpkn2k/image/upload/v1774960468/Dhruv_Chavan_unr1sz.jpg",
+          "bio": "Creating, Designing, Representing.",
+          "quote": "Dreaming in high resolution.",
+          "links": {
+            "codechef": "",
+            "github": "https://github.com/Dmcdhruv",
+            "leetcode": "",
+            "codeforces": ""
+          }
         }
       ]
     },
@@ -222,7 +223,7 @@
           "id": "mk1",
           "name": "Suryanshu Banerjee",
           "role": "Marketing Head",
-          "imageUrl": "https://picsum.photos/200/300",
+          "imageUrl": "https://res.cloudinary.com/dylcpkn2k/image/upload/v1774961254/Suryanshu_Banerjee_qc5fb3.jpg",
           "bio": "Leading marketing strategies.",
           "quote": "Marketing is storytelling.",
           "links": {
@@ -236,11 +237,11 @@
           "id": "mk2",
           "name": "Ronak Shah",
           "role": "Marketing Team Member",
-          "imageUrl": "https://picsum.photos/200/300",
+          "imageUrl": "https://res.cloudinary.com/dylcpkn2k/image/upload/v1774961249/Ronak_shah_s7jkue.jpg",
           "bio": "Connecting with the audience.",
           "quote": "Connect and convert.",
           "links": {
-            "codechef": "",
+            "codechef": "https://www.codechef.com/users/ronak_65",
             "github": "https://github.com/ronakshah167",
             "leetcode": "",
             "codeforces": ""
@@ -250,7 +251,7 @@
           "id": "mk3",
           "name": "Navya Hundia",
           "role": "Marketing Team Member",
-          "imageUrl": "https://picsum.photos/200/300",
+          "imageUrl": "https://res.cloudinary.com/dylcpkn2k/image/upload/v1774961249/Navya_hundia_zcqbwi.jpg",
           "bio": "Creating engaging campaigns.",
           "quote": "Engagement is key.",
           "links": {
@@ -264,12 +265,12 @@
           "id": "mk4",
           "name": "Kanishka Sahal",
           "role": "Marketing Team Member",
-          "imageUrl": "https://picsum.photos/200/300",
+          "imageUrl": "https://res.cloudinary.com/dylcpkn2k/image/upload/v1774961243/Kanishka_Sahal_yeelvh.jpg",
           "bio": "Building brand awareness.",
           "quote": "Brand is everything.",
           "links": {
             "codechef": "",
-            "github": "",
+            "github": "https://github.com/kanishkasahal24",
             "leetcode": "",
             "codeforces": ""
           }
@@ -278,12 +279,26 @@
           "id": "mk5",
           "name": "Keyuri Sheth",
           "role": "Marketing Team Member",
-          "imageUrl": "https://picsum.photos/200/300",
+          "imageUrl": "https://res.cloudinary.com/dylcpkn2k/image/upload/v1774961242/Keyuri_Sheth_wqycnp.jpg",
           "bio": "Spreading the word.",
           "quote": "Words have power.",
           "links": {
             "codechef": "",
             "github": "",
+            "leetcode": "",
+            "codeforces": ""
+          }
+        },
+        {
+          "id": "mk6",
+          "name": "Veer Rathod ",
+          "role": "FY Rep-Marketing Team",
+          "imageUrl": "https://res.cloudinary.com/dylcpkn2k/image/upload/v1774961255/Veer_Rathod_vdfdn2.jpg",
+          "bio": "Helping amplify the brand voice.",
+          "quote": "Visibility creates opportunity.",
+          "links": {
+            "codechef": "",
+            "github": "https://github.com/veerrathod-hue",
             "leetcode": "",
             "codeforces": ""
           }
@@ -445,3 +460,5 @@
 
   ]
 }
+
+

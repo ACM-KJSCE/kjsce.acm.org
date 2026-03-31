@@ -4,7 +4,7 @@ import teams2024_2025 from "../data/teams-2024-2025.json";
 import TeamSection from "./TeamSection";
 
 // Combine the separate year files into a single array
-const teamsData = [teams2024_2025, teams2025_2026];
+const teamsData = [teams2025_2026, teams2024_2025];
 
 const TeamShowcase = () => {
   const [hoveredMemberId, setHoveredMemberId] = useState(null);
