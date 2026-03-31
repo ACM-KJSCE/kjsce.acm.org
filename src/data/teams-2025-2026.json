@@ -9,7 +9,7 @@
           "id": "c1",
           "name": "Viraj Pawar",
           "role": "Chairperson",
-          "imageUrl": "https://picsum.photos/200/300",
+          "imageUrl": "https://res.cloudinary.com/dlcrnw8bp/image/upload/v1774963818/IMG_3672_nrf56e.jpg",
           "bio": "Leading the ACM chapter to new heights.",
           "quote": "Leadership is action, not position.",
           "links": {
@@ -22,7 +22,7 @@
           "id": "c2",
           "name": "Ashutosh Dosi",
           "role": "Vice Chairperson",
-          "imageUrl": "https://picsum.photos/200/300",
+          "imageUrl": "https://res.cloudinary.com/dlcrnw8bp/image/upload/v1774963845/IMG_3678_sywrlu.jpg",
           "bio": "Dedicated to fostering a collaborative environment.",
           "quote": "Collaboration fuels innovation.",
           "links": {
@@ -36,7 +36,7 @@
           "id": "c3",
           "name": "Aashna Parikh",
           "role": "Secretary",
-          "imageUrl": "https://picsum.photos/200/300",
+          "imageUrl": "https://res.cloudinary.com/dlcrnw8bp/image/upload/v1774963870/IMG_3711_rwxpxu.jpg",
           "bio": "Ensuring smooth operations and communication.",
           "quote": "Efficiency is key.",
           "links": {
@@ -50,7 +50,7 @@
           "id": "c4",
           "name": "Vedant Walunj",
           "role": "Treasurer",
-          "imageUrl": "https://picsum.photos/200/300",
+          "imageUrl": "https://res.cloudinary.com/dlcrnw8bp/image/upload/v1774963847/IMG_3679_zk4jt0.jpg",
           "bio": "Managing resources for sustainable growth.",
           "quote": "Integrity in every transaction.",
           "links": {
@@ -84,7 +84,7 @@
           "id": "tc2",
           "name": "Pratik Patil",
           "role": "Tech Team Member",
-          "imageUrl": "https://picsum.photos/200/300",
+          "imageUrl": "https://res.cloudinary.com/dlcrnw8bp/image/upload/v1774963868/IMG_3667_nbalfo.jpg",
           "bio": "Building solutions with code.",
           "quote": "Keep building.",
           "links": {
@@ -98,7 +98,7 @@
           "id": "tc3",
           "name": "Omkar Bhoir",
           "role": "Tech Team Member",
-          "imageUrl": "https://picsum.photos/200/300",
+          "imageUrl": "https://res.cloudinary.com/dlcrnw8bp/image/upload/v1774963838/IMG_3675_xsmtm3.jpg",
           "bio": "Exploring new technologies and frameworks.",
           "quote": "Always learning.",
           "links": {
@@ -126,7 +126,7 @@
           "id": "tc5",
           "name": "Rishi Dadia",
           "role": "Tech Team Member",
-          "imageUrl": "https://picsum.photos/200/300",
+          "imageUrl": "https://res.cloudinary.com/dlcrnw8bp/image/upload/v1774963848/IMG_3695_gatpzl.jpg",
           "bio": "Eager to learn and contribute.",
           "quote": "Learn and grow.",
           "links": {
