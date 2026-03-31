@@ -198,20 +198,6 @@
             "leetcode": "",
             "codeforces": ""
           }
-        },
-        {
-          "id": "cr6",
-          "name": "Dhruv Chavan ",
-          "role": "FY Rep-Creative Team",
-          "imageUrl": "https://res.cloudinary.com/dylcpkn2k/image/upload/v1774960468/Dhruv_Chavan_unr1sz.jpg",
-          "bio": "Creating, Designing, Representing.",
-          "quote": "Dreaming in high resolution.",
-          "links": {
-            "codechef": "",
-            "github": "https://github.com/Dmcdhruv",
-            "leetcode": "",
-            "codeforces": ""
-          }
         }
       ]
     },
@@ -288,21 +274,8 @@
             "leetcode": "",
             "codeforces": ""
           }
-        },
-        {
-          "id": "mk6",
-          "name": "Veer Rathod ",
-          "role": "FY Rep-Marketing Team",
-          "imageUrl": "https://res.cloudinary.com/dylcpkn2k/image/upload/v1774961255/Veer_Rathod_vdfdn2.jpg",
-          "bio": "Helping amplify the brand voice.",
-          "quote": "Visibility creates opportunity.",
-          "links": {
-            "codechef": "",
-            "github": "https://github.com/veerrathod-hue",
-            "leetcode": "",
-            "codeforces": ""
-          }
         }
+        
       ]
     },
     {
@@ -313,7 +286,7 @@
           "id": "op1",
           "name": "Shashank Sathish",
           "role": "Operations Head",
-          "imageUrl": "https://picsum.photos/200/300",
+          "imageUrl": "https://res.cloudinary.com/ddyp4krsd/image/upload/v1774985628/IMG_3687_mxjzw1.jpg",
           "bio": "Overseeing operations.",
           "quote": "Efficiency is doing things right.",
           "links": {
@@ -327,7 +300,7 @@
           "id": "op2",
           "name": "Sahil Shah",
           "role": "Operations Team Member",
-          "imageUrl": "https://picsum.photos/200/300",
+          "imageUrl": "https://res.cloudinary.com/ddyp4krsd/image/upload/v1774985712/IMG_3707_lzagy8.jpg",
           "bio": "Ensuring logistical support.",
           "quote": "Logistics win wars.",
           "links": {
@@ -341,7 +314,7 @@
           "id": "op3",
           "name": "Aditya Jha",
           "role": "Operations Team Member",
-          "imageUrl": "https://picsum.photos/200/300",
+          "imageUrl": "https://res.cloudinary.com/ddyp4krsd/image/upload/v1774985629/Aditya_Jha_g8mfis.jpg",
           "bio": "Coordinating events.",
           "quote": "Events create memories.",
           "links": {
@@ -355,7 +328,7 @@
           "id": "op4",
           "name": "Varad Surve",
           "role": "Operations Team Member",
-          "imageUrl": "https://picsum.photos/200/300",
+          "imageUrl": "https://res.cloudinary.com/ddyp4krsd/image/upload/v1774985635/IMG_3666_ritoj7.jpg",
           "bio": "Supporting the team.",
           "quote": "Support is strength.",
           "links": {
@@ -389,7 +362,7 @@
       "id": "fy1",
       "name": "Ralston Dsouza",
       "role": "Tech Team FY-Rep",
-      "imageUrl": "https://picsum.photos/200/300",
+      "imageUrl": "https://res.cloudinary.com/ddyp4krsd/image/upload/v1774985134/RalstonDsouza_sb76q4.jpg",
       "bio": "I am nothing without hard work.",
       "quote": "Built, not born.",
       "links": {
@@ -403,7 +376,7 @@
       "id": "fy2",
       "name": "Arya Sangle",
       "role": "Tech Team FY-Rep",
-      "imageUrl": "https://picsum.photos/200/300",
+      "imageUrl": "https://res.cloudinary.com/ddyp4krsd/image/upload/v1774985335/Arya_Sangle_teszfw.jpg",
       "bio": null,
       "quote": null,
       "links": {
@@ -417,7 +390,7 @@
       "id": "fy3",
       "name": "Dhruv Chavan",
       "role": "Creative Team FY-Rep",
-      "imageUrl": "https://picsum.photos/200/300",
+      "imageUrl": "https://res.cloudinary.com/ddyp4krsd/image/upload/v1774985331/dhruvchavan_hwghev.jpg",
       "bio": null,
       "quote": null,
       "links": {
@@ -431,7 +404,7 @@
       "id": "fy4",
       "name": "Veer Rathod",
       "role": "Marketing Team FY-Rep",
-      "imageUrl": "https://picsum.photos/200/300",
+      "imageUrl": "https://res.cloudinary.com/ddyp4krsd/image/upload/v1774985507/IMG_3696_tqtgng.jpg",
       "bio": "Bringing fresh ideas to marketing.",
       "quote": "Ideas change everything.",
       "links": {
@@ -445,7 +418,7 @@
       "id": "fy5",
       "name": "Het Faldu",
       "role": "Operations Team FY-Rep",
-      "imageUrl": "https://picsum.photos/200/300",
+      "imageUrl": "https://res.cloudinary.com/ddyp4krsd/image/upload/v1774985513/IMG_3662_rrpv91.jpg",
       "bio": "Ready to operate.",
       "quote": "Action speaks louder.",
       "links": {
