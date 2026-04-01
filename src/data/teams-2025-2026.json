@@ -112,11 +112,11 @@
           "id": "tc4",
           "name": "Aryan Movalia",
           "role": "Tech Team Member",
-          "imageUrl": "https://picsum.photos/200/300",
-          "bio": "Enthusiastic about starting the tech journey.",
-          "quote": "Hello World.",
+          "imageUrl": "https://res.cloudinary.com/dylcpkn2k/image/upload/v1775062425/Aryan_Movalia_tmbwpa.jpg",
+          "bio": "Continuing the tech journey.",
+          "quote": "Optimize everything.",
           "links": {
-            "codechef": "https://www.codechef.com/users/aryan65828965",
+            "codechef": "https://www.codechef.com/users/aryan_movalia",
             "github": "https://github.com/aryan6582896578",
             "leetcode": "https://leetcode.com/u/aryan6582896578",
             "codeforces": "https://codeforces.com/profile/aryan6582896578"
@@ -175,7 +175,7 @@
           "id": "cr4",
           "name": "Rimjhim Ranjan",
           "role": "Creative Team Member",
-          "imageUrl": "https://picsum.photos/200/300",
+          "imageUrl": "https://res.cloudinary.com/dylcpkn2k/image/upload/v1775062491/Rimjhim_Ranjan_dv7zwp.jpg",
           "bio": "Adding color to ideas.",
           "quote": "Creativity takes courage.",
           "links": {
@@ -189,7 +189,7 @@
           "id": "cr5",
           "name": "Manaswi Bhosale",
           "role": "Creative Team Member",
-          "imageUrl": "https://picsum.photos/200/300",
+          "imageUrl": "https://res.cloudinary.com/dylcpkn2k/image/upload/v1775062513/Manaswi_Bhosale_ovs6pt.jpg",
           "bio": "Crafting visual stories.",
           "quote": "Stories matter.",
           "links": {
