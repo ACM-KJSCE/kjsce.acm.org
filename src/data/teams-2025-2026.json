@@ -147,7 +147,7 @@
           "id": "cr2",
           "name": "Sai Bhadane",
           "role": "Creative Team Member",
-          "imageUrl": "https://picsum.photos/200/300",
+          "imageUrl": "https://res.cloudinary.com/dylcpkn2k/image/upload/v1775220319/Sai_Bhadane.jpg_jzg7nt.jpg",
           "bio": "Fresh perspective on design.",
           "quote": "Design is a journey.",
           "links": {
@@ -187,7 +187,7 @@
         },
         {
           "id": "cr5",
-          "name": "Manaswi Bhosale",
+          "name": "Manasvi Bhosle",
           "role": "Creative Team Member",
           "imageUrl": "https://res.cloudinary.com/dylcpkn2k/image/upload/v1775062513/Manaswi_Bhosale_ovs6pt.jpg",
           "bio": "Crafting visual stories.",
@@ -342,7 +342,7 @@
           "id": "op5",
           "name": "Dhruv Dhariwal",
           "role": "Operations Team Member",
-          "imageUrl": "https://picsum.photos/200/300",
+          "imageUrl": "/assets/Operations_Team_Dhruv_Dhariwal.png",
           "bio": "Learning operations.",
           "quote": "Learn by doing.",
           "links": {
