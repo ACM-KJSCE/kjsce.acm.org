@@ -480,9 +480,9 @@
           "id": "op2",
           "name": "Vedant Walunj",
           "role": "Operations Team Member",
-          "imageUrl": "/assets/Operations_Team_Vedant_Walunj.jpg",
+          "imageUrl": "https://res.cloudinary.com/dlcrnw8bp/image/upload/v1774963847/IMG_3679_zk4jt0.jpg",
           "initials": "VW",
-          "bio": "Ensuring logistical support.",
+          "bio": "Ensuring smooth execution of events.",
           "quote": "Logistics win wars.",
           "links": {
             "codechef": "https://www.codechef.com/users/vedantwalunj",
