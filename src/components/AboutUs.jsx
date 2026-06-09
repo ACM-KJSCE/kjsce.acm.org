@@ -20,7 +20,7 @@ function AboutUs() {
           At KJSSE ACM, our mantra is simple: together we strive, together we achieve..... and maybe have a little too much fun along the way!
         </p>
       </div>
-        <img src='team.jpg' alt='About Us' className='relative z-10 md:w-2/3 w-11/12 rounded-2xl md:mt-12 mt-0 about' />
+        <img src='acm_2025-26.jpeg' alt='About Us' className='relative z-10 md:w-2/3 w-11/12 rounded-2xl md:mt-12 mt-0 about' />
     </div>
   )
 }

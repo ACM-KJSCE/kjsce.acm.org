@@ -1,5 +1,68 @@
 [
   {
+    "title": "AfterMath 2026",
+    "description": "AfterMath is the flagship 24-hour hackathon by KJSCE ACM Student Chapter — a post-apocalyptic, sustainability-focused challenge centered on building solutions for humanity.\n\n Theme: 'The Regeneration Arc'\n\n Tracks:\n• Humanity\n• Civic Innovation\n\n Prize Pool: ₹1 Lakh+\n\nBring discipline. Bring code. Build what survives the collapse.\n\n For more details, visit: https://kjsce.acm.org/aftermath",
+    "imageUrl": "https://res.cloudinary.com/dzsscqf6t/image/upload/v1781032842/aftermath_tsk0lm.jpg",
+    "sponsors": [
+      {
+        "name": "Devsemble",
+        "url": "/sponsor/dev.png"
+      },
+      {
+        "name": ".xyz",
+        "url": "/sponsor/xyz.png"
+      },
+      {
+        "name": "Pop Zero",
+        "url": "/sponsor/popZero.png"
+      },
+      {
+        "name": "RAPS",
+        "url": "/sponsor/raps.png"
+      },
+      {
+        "name": "Interview Buddy",
+        "url": "/sponsor/interviewbuddy.png"
+      },
+      {
+        "name": "Rage Room",
+        "url": "/sponsor/rageroom.png"
+      }
+    ],
+    "code": "aftermath",
+    "day": "Sat-Sun",
+    "month": "Feb-March",
+    "date": "28-1st",
+    "fullDate": "28th Feb and 1st March, 2026",
+    "time": "24 Hours",
+    "venue": "A314, A215"
+  },
+  {
+    "title": "Artemis 2025",
+    "description": "Artemis, brought to you by KJSSE ACM Student Chapter, is a fun and dynamic frontend mini-hackathon. It's all about unleashing your creativity in web development—crafting cool designs, building functional frontends, and tackling unique challenges. Whether you're a pro or just starting out, it's a great chance to learn, create, and win!\n\n For more details, visit: https://artemis.kjsce.hosting.acm.org",
+    "imageUrl": "https://res.cloudinary.com/dzsscqf6t/image/upload/v1781032261/artemis_2025_gp284d.jpg",
+    "sponsors": [
+      {
+        "name": "Friends of Figma",
+        "url": "/sponsor/FigmaMumbai.png"
+      },
+      {
+        "name": "Millimo",
+        "url": "/sponsor/Millimo.png"
+      },
+      {
+        "name": "Kudrati Kahumbo ",
+        "url": "/sponsor/Kudrati.png"
+      }
+    ],
+    "code": "Artemis-2025",
+    "day": "Tuesday",
+    "month": "Oct",
+    "date": "14",
+    "fullDate": "Tuesday, October 14, 2025",
+    "time": "10:00 AM - 7:00 PM"
+  },
+  {
     "title": "Beyond the Classroom",
     "description": "We are the ACM Student Chapter- KJSCE’s official arm of the world’s largest computing society.\n\nThis September, we bring back our signature seminar:\n\n✨ BEYOND THE CLASSROOM ✨\n\nAn event designed to show you what truly sets achievers apart- how to build skills, mindset, and (international) credibility beyond academics.\n\n📝 Learn how to stand out beyond your grades\n\n🎓 Hear from those who’ve walked the path\n\n📰 Unlock the blueprint for success\n\nFreshers, this is where it begins. Your network, your mentors, and maybe even your future teammates are waiting for you here ‼️",
     "imageUrl": "https://res.cloudinary.com/dzsscqf6t/image/upload/v1767188152/Btc-2025_l17rad.jpg",
@@ -55,7 +118,7 @@
       },
       {
         "name": "Interview Buddy",
-        "url": "/sponsor/InterviewBuddy.png"
+        "url": "/sponsor/interviewbuddy.png"
       },
       {
         "name": "Beeceptor",
@@ -67,7 +130,7 @@
     "month": "Oct",
     "date": "15",
     "fullDate": "Tuesday, October 15, 2024",
-    "time": "5:00 PM - 7:00 PM"
+    "time": "10:00 AM - 7:00 PM"
   },
   {
     "title": "Beyond the Classroom",

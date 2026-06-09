@@ -10,9 +10,9 @@ function Event() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % events.length);
-    }, 5000);
+    }, 10000);
     return () => clearInterval(timer);
-  }, []);
+  }, [currentIndex]);
 
   return (
     <div id="events" className="relative w-full py-12 px-4 md:px-8 mt-8">

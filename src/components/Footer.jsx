@@ -8,7 +8,7 @@ const Footer = () => {
     >
       {/* Background Giant Text */}
       <h1 className="absolute bottom-0 left-1/2 -translate-x-1/2 text-[18vw] font-extrabold tracking-tight text-blue-600/30 select-none pointer-events-none whitespace-nowrap">
-        ACM-KJSSE
+        KJSSE-ACM
       </h1>
 
       {/* Main Content */}
@@ -73,10 +73,10 @@ const Footer = () => {
         {/* Footer Bottom */}
         <div className="relative z-10 border-t border-white/20 pt-8 text-center">
           <p className="text-base font-semibold text-[#e6f2ff] mb-1">
-            Made with ❤️ by ACM-KJSSE
+            Made with ❤️ by KJSSE-ACM
           </p>
           <p className="text-sm text-gray-400">
-            © {new Date().getFullYear()} ACM-KJSSE. All rights reserved.
+            © {new Date().getFullYear()} KJSSE-ACM. All rights reserved.
           </p>
         </div>
       </div>
