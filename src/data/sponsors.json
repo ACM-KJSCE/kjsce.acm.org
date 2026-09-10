@@ -2,27 +2,33 @@
     "sponsors": [
         {
             "name": "Peppy",
-            "url": "/sponsors_BTC_2026/Peppy.jpeg"
+            "url": "/sponsors_BTC_2026/Peppy.png",
+            "height": 80
         },
         {
             "name":"The Blix Bar",
-            "url": "/sponsors_BTC_2026/BlixBar.jpeg"
+            "url": "/sponsors_BTC_2026/BlixBar.png",
+            "height": 130
         },
         {
             "name":"InterView Buddy",
-            "url": "/sponsors_BTC_2026/InterviewBuddy.jpeg"
+            "url": "/sponsors_BTC_2026/InterviewBuddy.png",
+            "height": 110
         },
         {
             "name": "Rage Room",
-            "url": "/sponsors_BTC_2026/RageRoom.jpeg"
+            "url": "/sponsors_BTC_2026/RageRoom.png",
+            "height": 130
         },
         {
             "name": "Love & Latte",
-            "url": "/sponsors_BTC_2026/LoveAndLatte.jpeg"
+            "url": "/sponsors_BTC_2026/LoveAndLatte.png",
+            "height": 130
         },
         {
             "name": ".xyz",
-            "url": "/sponsors_BTC_2026/xyz.png"
+            "url": "/sponsors_BTC_2026/xyz.png",
+            "height": 80
         }
     ]   
 }

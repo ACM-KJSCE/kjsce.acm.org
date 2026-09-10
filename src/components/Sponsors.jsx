@@ -7,7 +7,7 @@ function Sponsors({ sponsorList }) {
 
   useEffect(() => {
     const slider = sliderRef.current;
-    let scrollSpeed = 1;
+    let scrollSpeed = 2;
     let animationFrameId;
 
     const loop = () => {
@@ -42,16 +42,17 @@ function Sponsors({ sponsorList }) {
           onMouseLeave={() => setIsHovered(false)}
         >
           <motion.div
-            className="flex gap-8 overflow-hidden w-full"
+            className="flex items-center gap-8 overflow-hidden w-full"
             ref={sliderRef}
           >
-            {[...sponsorList, ...sponsorList, ...sponsorList, ...sponsorList, ...sponsorList].map(
-              (imgSrc, index) => (
+            {[...sponsorList, ...sponsorList, ...sponsorList, ...sponsorList, ...sponsorList, ...sponsorList, ...sponsorList].map(
+              (sponsor, index) => (
                 <div key={index} className="flex-shrink-0">
                   <img
-                    src={imgSrc}
-                    alt={`Slide ${index}`}
-                    className="w-auto h-[90px] object-cover"
+                    src={sponsor.url}
+                    alt={sponsor.name}
+                    className="w-auto object-cover"
+                    style={{ height: `${sponsor.height}px` }}
                   />
                 </div>
               ),

@@ -14,7 +14,7 @@ import sponsors from "./data/sponsors.json";
 function App() {
   const projectId = "pjgnnov8ie";
   Clarity.init(projectId);
-  const sponsorList = sponsors.sponsors.map((sponsor) => sponsor.url);
+  const sponsorList = sponsors.sponsors;
 
   return (
     <>
