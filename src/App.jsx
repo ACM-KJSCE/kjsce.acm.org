@@ -9,10 +9,13 @@ import TeamShowcase from "./components/TeamShowcase";
 import Clarity from "@microsoft/clarity";
 import "./App.css";
 import Sponsors from "./components/Sponsors";
+import sponsors from "./data/sponsors.json";
 
 function App() {
   const projectId = "pjgnnov8ie";
   Clarity.init(projectId);
+  const sponsorList = sponsors.sponsors.map((sponsor) => sponsor.url);
+
   return (
     <>
       <Navbar />
@@ -21,7 +24,7 @@ function App() {
           <Hero />
           <AboutUs />
           <Event />
-          <Sponsors />
+          <Sponsors sponsorList={sponsorList} />
           <Team2 />
           <TeamShowcase />
         </div>

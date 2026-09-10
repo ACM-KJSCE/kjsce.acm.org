@@ -1,0 +1,28 @@
+{
+    "sponsors": [
+        {
+            "name": "Peppy",
+            "url": "/sponsors_BTC_2026/Peppy.jpeg"
+        },
+        {
+            "name":"The Blix Bar",
+            "url": "/sponsors_BTC_2026/BlixBar.jpeg"
+        },
+        {
+            "name":"InterView Buddy",
+            "url": "/sponsors_BTC_2026/InterviewBuddy.jpeg"
+        },
+        {
+            "name": "Rage Room",
+            "url": "/sponsors_BTC_2026/RageRoom.jpeg"
+        },
+        {
+            "name": "Love & Latte",
+            "url": "/sponsors_BTC_2026/LoveAndLatte.jpeg"
+        },
+        {
+            "name": ".xyz",
+            "url": "/sponsors_BTC_2026/xyz.png"
+        }
+    ]   
+}
