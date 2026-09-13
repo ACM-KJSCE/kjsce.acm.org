@@ -17,7 +17,7 @@ function Event() {
   return (
     <div id="events" className="relative w-full py-12 px-4 md:px-8 mt-8">
       <div className="max-w-7xl mx-auto flex flex-col justify-center items-center">
-        <h1 className="text-4xl uppercase font-black text-center dark:text-white text-black mb-12 border-b-cyan-400 border-b-2 inline-block mx-auto pb-4">
+        <h1 className="text-4xl uppercase font-black text-center text-white mb-12 border-b-cyan-400 border-b-2 inline-block mx-auto pb-4">
           Our Events
         </h1>
 
