@@ -31,7 +31,7 @@ function Sponsors({ sponsorList }) {
       id="sponsors"
       className="flex flex-col items-center font-semibold text-1xl md:text-2xl text-white text-justify sm:pl-4 m-"
     >
-    <h1 className="text-4xl uppercase font-black text-center dark:text-white text-black mb-12 border-b-cyan-400 border-b-2 inline-block mx-auto pb-4">
+    <h1 className="text-4xl uppercase font-black text-center text-white mb-12 border-b-cyan-400 border-b-2 inline-block mx-auto pb-4">
           Our Sponsors
         </h1>
 
