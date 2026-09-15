@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isRedirecting, setIsRedirecting] = useState(false);
 
   const handleScrollTo = (id) => {
     const element = document.getElementById(id);
@@ -25,6 +26,11 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const redirect = () => {
+    setIsRedirecting(true);
+    window.open("https://acm-fyrep-2627.web.app/", "_blank", "noopener,noreferrer");
+    setIsMenuOpen(false);
+  };
   return (
     <>
       {/* Navbar */}
@@ -66,6 +72,12 @@ const Navbar = () => {
             <li className="cursor-pointer hover:text-white" onClick={() => handleScrollTo("contact-us")}>
               Contact Us
             </li>
+            <li
+              className={`cursor-pointer ${!isRedirecting ? "hover:text-white" : ""}`}
+              onClick={redirect}
+            >
+              Join Us
+            </li>
           </ul>
 
           {/* Mobile Hamburger */}
@@ -74,7 +86,7 @@ const Navbar = () => {
               className="text-2xl text-neutral-400"
               onClick={() => setIsMenuOpen(true)}
             >
-              ☰
+            ☰
             </button>
           </div>
         </div>
@@ -100,6 +112,12 @@ const Navbar = () => {
           <li className="cursor-pointer hover:text-white" onClick={() => handleScrollTo("sponsors")}>Sponsors</li>
           <li className="cursor-pointer hover:text-white" onClick={() => handleScrollTo("our-team")}>Our Team</li>
           <li className="cursor-pointer hover:text-white" onClick={() => handleScrollTo("contact-us")}>Contact Us</li>
+          <li
+            className={`cursor-pointer ${!isRedirecting ? "hover:text-white" : ""}`}
+            onClick={redirect}
+          >
+            Join Us
+          </li>
         </ul>
       </div>
     </>
