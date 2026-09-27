@@ -1,20 +1,27 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isRedirecting, setIsRedirecting] = useState(false);
 
-  const handleScrollTo = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+  const goToSection = (path) => {
+    navigate(path);
     setIsMenuOpen(false);
   };
 
   const handleHomeClick = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    navigate("/");
+    setIsMenuOpen(false);
+  };
+
+  const handleContactClick = () => {
+    const footer = document.getElementById("contact-us");
+    if (footer) {
+      footer.scrollIntoView({ behavior: "smooth", block: "end" });
+    }
     setIsMenuOpen(false);
   };
 
@@ -60,16 +67,19 @@ const Navbar = () => {
             <li className="cursor-pointer hover:text-white" onClick={handleHomeClick}>
               Home
             </li>
-            <li className="cursor-pointer hover:text-white" onClick={() => handleScrollTo("about-us")}>
+            <li className="cursor-pointer hover:text-white" onClick={() => goToSection("/about-us")}>
               About Us
             </li>
-            <li className="cursor-pointer hover:text-white" onClick={() => handleScrollTo("events")}>
+            <li className="cursor-pointer hover:text-white" onClick={() => goToSection("/events")}>
               Events
             </li>
-            <li className="cursor-pointer hover:text-white" onClick={() => handleScrollTo("our-team")}>
+            <li className="cursor-pointer hover:text-white" onClick={() => goToSection("/our-team")}>
               Our Team
             </li>
-            <li className="cursor-pointer hover:text-white" onClick={() => handleScrollTo("contact-us")}>
+            <li className="cursor-pointer hover:text-white" onClick={() => goToSection("/sponsors")}>
+              Sponsors
+            </li>
+            <li className="cursor-pointer hover:text-white" onClick={handleContactClick}>
               Contact Us
             </li>
             <li
@@ -107,15 +117,13 @@ const Navbar = () => {
 
         <ul className="flex flex-col justify-center items-center h-full gap-6 text-lg font-semibold text-neutral-400">
           <li className="cursor-pointer hover:text-white" onClick={handleHomeClick}>Home</li>
-          <li className="cursor-pointer hover:text-white" onClick={() => handleScrollTo("about-us")}>About Us</li>
-          <li className="cursor-pointer hover:text-white" onClick={() => handleScrollTo("events")}>Events</li>
-          <li className="cursor-pointer hover:text-white" onClick={() => handleScrollTo("sponsors")}>Sponsors</li>
-          <li className="cursor-pointer hover:text-white" onClick={() => handleScrollTo("our-team")}>Our Team</li>
-          <li className="cursor-pointer hover:text-white" onClick={() => handleScrollTo("contact-us")}>Contact Us</li>
-          <li
-            className={`cursor-pointer ${!isRedirecting ? "hover:text-white" : ""}`}
-            onClick={redirect}
-          >
+          <li className="cursor-pointer hover:text-white" onClick={() => goToSection("/about-us")}>About Us</li>
+          <li className="cursor-pointer hover:text-white" onClick={() => goToSection("/events")}>Events</li>
+          <li className="cursor-pointer hover:text-white" onClick={() => goToSection("/sponsors")}>Sponsors</li>
+          <li className="cursor-pointer hover:text-white" onClick={() => goToSection("/our-team")}>Our Team</li>
+          <li className="cursor-pointer hover:text-white" onClick={handleContactClick}>Contact Us</li>
+          <li className={`cursor-pointer ${!isRedirecting ? "hover:text-white" : ""}`}
+            onClick={redirect}>
             Join Us
           </li>
         </ul>

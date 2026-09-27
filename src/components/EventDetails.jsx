@@ -137,13 +137,13 @@ export default function EventDetails() {
 function BackButton({ navigate }) {
   return (
     <button
-      onClick={() => navigate("/")}
+      onClick={() => navigate("/events")}
       className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-4 group"
     >
       <div className="p-1 rounded-full group-hover:bg-white/10 transition-colors">
         <MoveLeft className="w-5 h-5" />
       </div>
-      <span className="font-medium">Back to Home</span>
+      <span className="font-medium">Back to Events</span>
     </button>
   );
 }

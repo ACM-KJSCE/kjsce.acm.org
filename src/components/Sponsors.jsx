@@ -29,13 +29,13 @@ function Sponsors({ sponsorList }) {
   return sponsorList ? (
     <div
       id="sponsors"
-      className="flex flex-col items-center font-semibold text-1xl md:text-2xl text-white text-justify sm:pl-4 m-"
+      className="flex flex-col items-center font-semibold text-1xl md:text-2xl text-white text-justify sm:pl-4"
     >
-    <h1 className="text-4xl uppercase font-black text-center text-white mb-12 border-b-cyan-400 border-b-2 inline-block mx-auto pb-4">
+    <h1 className="text-4xl uppercase font-black text-center text-white mb-8 border-b-cyan-400 border-b-2 inline-block mx-auto pb-4">
           Our Sponsors
         </h1>
 
-      <div className="overflow-hidden  w-full h-auto ml-1">
+      <div className="overflow-hidden  w-full h-auto ml-1 mb-10">
         <div
           className="relative flex w-full"
           onMouseEnter={() => setIsHovered(true)}
