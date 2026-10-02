@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import { SiLeetcode } from "react-icons/si";
 
@@ -36,14 +36,24 @@ export default function TeamSection({
   team,
   hoveredMemberId,
   onHoverMember,
-  year,
 }) {
   const mobilePopupCardRef = useRef(null);
+  const closeTimerRef = useRef(null);
+  const [isPopupClosing, setIsPopupClosing] = useState(false);
   const selectedMember = hoveredMemberId
     ? team.members.find((m) => m.id === hoveredMemberId)
     : null;
 
+  useEffect(
+    () => () => {
+      window.clearTimeout(closeTimerRef.current);
+    },
+    [],
+  );
+
   const handleMemberSelect = (memberId) => {
+    window.clearTimeout(closeTimerRef.current);
+    setIsPopupClosing(false);
     onHoverMember?.(memberId);
 
     if (window.matchMedia("(max-width: 1023px)").matches) {
@@ -75,6 +85,16 @@ export default function TeamSection({
         });
       }
     });
+  };
+
+  const handleMemberClose = () => {
+    if (isPopupClosing) return;
+
+    setIsPopupClosing(true);
+    closeTimerRef.current = window.setTimeout(() => {
+      onHoverMember?.(null);
+      setIsPopupClosing(false);
+    }, 450);
   };
 
   return (
@@ -125,10 +145,13 @@ export default function TeamSection({
 
         {selectedMember && (
           <div
-            className="absolute inset-0 z-20 flex items-center justify-center bg-slate-950/55 backdrop-blur-sm p-4 popup-overlay"
-            onClick={() => onHoverMember?.(null)}
+            className={`absolute inset-0 z-20 flex items-center justify-center bg-slate-950/55 backdrop-blur-sm p-4 popup-overlay ${isPopupClosing ? "popup-overlay-closing" : ""}`}
+            onClick={handleMemberClose}
           >
-            <div className="flip-card popup-card" onClick={(e) => e.stopPropagation()}>
+            <div
+              className={`flip-card popup-card ${isPopupClosing ? "popup-card-closing" : ""}`}
+              onClick={(e) => e.stopPropagation()}
+            >
               <div className="flip-card-inner is-flipped">
                 <div className="flip-card-front">
                   <div className="w-full h-full bg-[#16182e] rounded-[28px] border border-white/10 shadow-2xl overflow-hidden">
@@ -148,7 +171,7 @@ export default function TeamSection({
                   <div className="w-full h-full bg-[#16182e] rounded-[28px] border border-cyan-500/30 shadow-2xl p-6 relative overflow-hidden">
                     <button
                       className="absolute top-4 right-4 text-2xl text-white/80 hover:text-white"
-                      onClick={() => onHoverMember?.(null)}
+                      onClick={handleMemberClose}
                       aria-label="Close member details"
                     >
                       &times;
@@ -214,21 +237,6 @@ export default function TeamSection({
 
       {/* Mobile Layout - Team grid with overlay detail card popup */}
       <div className="lg:hidden max-w-7xl w-full flex flex-col gap-6 relative">
-        {/* Top Section - Team Name (Always Visible) */}
-        <div className="text-center animate-fade-in-up">
-          <div className="flex justify-center items-baseline space-x-2 mb-3">
-            <span className="text-xs font-bold tracking-widest uppercase text-cyan-500">
-              KJSSE ACM {year}
-            </span>
-          </div>
-          <h2 className="text-3xl md:text-6xl font-black text-white tracking-tighter leading-none mb-3 drop-shadow-2xl">
-            {team.teamName}
-          </h2>
-          <p className="text-base md:text-2xl text-gray-300 font-light leading-relaxed">
-            {team.description}
-          </p>
-        </div>
-
         <div className="flex justify-center items-center">
           <div className="flex flex-wrap justify-center gap-4 md:gap-6 max-w-lg mx-auto p-2 md:p-4">
             {team.members.map((member, index) => {
@@ -286,12 +294,12 @@ export default function TeamSection({
 
         {selectedMember && (
           <div
-            className="absolute inset-0 z-20 flex items-center justify-center bg-slate-950/55 backdrop-blur-sm p-4 popup-overlay"
-            onClick={() => onHoverMember?.(null)}
+            className={`absolute inset-0 z-20 flex items-center justify-center bg-slate-950/55 backdrop-blur-sm p-4 popup-overlay ${isPopupClosing ? "popup-overlay-closing" : ""}`}
+            onClick={handleMemberClose}
           >
             <div
               ref={mobilePopupCardRef}
-              className="flip-card flip-card-mobile popup-card"
+              className={`flip-card flip-card-mobile popup-card ${isPopupClosing ? "popup-card-closing" : ""}`}
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flip-card-inner is-flipped">
@@ -313,7 +321,7 @@ export default function TeamSection({
                   <div className="w-full h-full bg-[#16182e] rounded-[24px] border border-cyan-500/30 shadow-2xl p-5 relative overflow-hidden">
                     <button
                       className="absolute top-3 right-3 text-xl text-white/80 hover:text-white"
-                      onClick={() => onHoverMember?.(null)}
+                      onClick={handleMemberClose}
                       aria-label="Close member details"
                     >
                       &times;
@@ -384,8 +392,15 @@ export default function TeamSection({
         .popup-overlay {
           animation: popupFadeIn 0.25s ease-out forwards;
         }
+        .popup-overlay-closing {
+          animation: popupFadeOut 0.45s ease-in forwards;
+        }
         .popup-card {
-          animation: popupFlipIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+          animation: popupFlipIn 1.15s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+        .popup-card-closing {
+          animation: popupFlipOut 0.45s cubic-bezier(0.55, 0, 1, 0.45) forwards;
+          pointer-events: none;
         }
         .flip-card {
           perspective: 2000px;
@@ -434,18 +449,39 @@ export default function TeamSection({
             opacity: 1;
           }
         }
+        @keyframes popupFadeOut {
+          from {
+            opacity: 1;
+          }
+          to {
+            opacity: 0;
+          }
+        }
         @keyframes popupFlipIn {
           0% {
-            opacity: 0;
-            transform: scale(0.8) rotateY(-90deg);
+            opacity: 0.3;
+            transform: perspective(1400px) scale(0.82) rotateY(-105deg);
           }
-          60% {
+          55% {
             opacity: 1;
-            transform: scale(1.04) rotateY(12deg);
+            transform: perspective(1400px) scale(1.04) rotateY(16deg);
+          }
+          78% {
+            transform: perspective(1400px) scale(0.99) rotateY(-7deg);
           }
           100% {
             opacity: 1;
+            transform: perspective(1400px) scale(1) rotateY(0deg);
+          }
+        }
+        @keyframes popupFlipOut {
+          from {
+            opacity: 1;
             transform: scale(1) rotateY(0deg);
+          }
+          to {
+            opacity: 0;
+            transform: scale(0.86) rotateY(90deg);
           }
         }
       `}</style>

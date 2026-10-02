@@ -146,18 +146,25 @@ const TeamShowcase = () => {
             ref={(el) => (sectionRefs.current[`team-${team.teamId}`] = el)}
             className="w-full transition-all duration-500 ease-out scale-100 opacity-100"
           >
-            {selectedTeamName === "All teams" && (
-              <div className="flex justify-center mb-6">
+            <div className="mb-6 text-center">
+              <span className="mb-2 block text-xs font-bold tracking-widest uppercase text-cyan-500">
+                KJSSE ACM {selectedYear}
+              </span>
+              <div className="flex justify-center">
                 <h3 className="text-2xl md:text-4xl font-black tracking-tight uppercase text-cyan-400 border-b-2 border-cyan-500 pb-2 px-4">
                   {team.teamName}
                 </h3>
               </div>
-            )}
+              {team.description && (
+                <p className="mx-auto mt-3 max-w-3xl text-sm md:text-lg text-gray-300 font-light leading-relaxed">
+                  {team.description}
+                </p>
+              )}
+            </div>
             <TeamSection
               team={team}
               hoveredMemberId={hoveredMemberId}
               onHoverMember={(id) => setHoveredMemberId(id)}
-              year={selectedYear}
             />
           </div>
         ))}
