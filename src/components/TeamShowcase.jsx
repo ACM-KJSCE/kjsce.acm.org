@@ -9,6 +9,7 @@ const teamsData = [teams2025_2026, teams2024_2025];
 const TeamShowcase = () => {
   const [hoveredMemberId, setHoveredMemberId] = useState(null);
   const [activeSection, setActiveSection] = useState(null);
+  const [selectedTeamName, setSelectedTeamName] = useState("All teams");
   const sectionRefs = useRef({});
 
   // Get available years from the data
@@ -23,8 +24,14 @@ const TeamShowcase = () => {
     return selectedYearData?.teamdata || [];
   }, [selectedYear]);
 
+  const visibleTeams = useMemo(() => {
+    if (!selectedTeamName || selectedTeamName === "All teams") return teams;
+    return teams.filter((team) => team.teamName === selectedTeamName);
+  }, [selectedTeamName, teams]);
+
   const handleYearChange = (year) => {
     setSelectedYear(year);
+    setSelectedTeamName("All teams");
     setHoveredMemberId(null);
     setActiveSection(null);
     sectionRefs.current = {};
@@ -80,17 +87,17 @@ const TeamShowcase = () => {
       observer.disconnect();
       visibilityMap.clear();
     };
-  }, [teams, selectedYear]);
+  }, [teams, selectedYear, visibleTeams]);
 
   return (
     <div className="relative w-full text-white shadow-lg rounded-lg font-sans selection:text-cyan-100 mt-16 md:mt-20 p-4">
       {/* Year Selection Buttons */}
-      <div className="flex justify-center gap-3 flex-wrap mb-8 px-4">
+      <div className="flex justify-center gap-3 flex-wrap mb-6 px-4">
         {availableYears.map((year) => (
           <button
             key={year}
             onClick={() => handleYearChange(year)}
-            className={`px-4 py-2 rounded-md text-sm font-semibold transition-all duration-300 border-2 ${
+            className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 border-2 ${
               selectedYear === year
                 ? "bg-cyan-500 border-cyan-500 text-white shadow-lg shadow-cyan-500/30"
                 : "bg-transparent border-gray-500 text-gray-300 hover:border-cyan-400 hover:text-cyan-400"
@@ -101,20 +108,63 @@ const TeamShowcase = () => {
         ))}
       </div>
 
+      {/* Team Selection Buttons */}
+      <div className="flex justify-start gap-3 flex-nowrap overflow-x-auto mb-8 px-4 pb-2 snap-x snap-mandatory md:justify-center md:flex-wrap md:overflow-visible md:pb-0">
+        <button
+          onClick={() => setSelectedTeamName("All teams")}
+          aria-pressed={selectedTeamName === "All teams"}
+          className={`shrink-0 snap-start rounded-full px-4 py-2 text-sm font-semibold transition-all duration-300 border-2 ${
+            selectedTeamName === "All teams"
+              ? "bg-cyan-500 border-cyan-500 text-white shadow-lg shadow-cyan-500/30"
+              : "bg-transparent border-gray-500 text-gray-300 hover:border-cyan-400 hover:text-cyan-400"
+          }`}
+        >
+          All teams
+        </button>
+        {teams.map((team) => (
+          <button
+            key={team.teamName}
+            onClick={() => setSelectedTeamName(team.teamName)}
+            aria-pressed={selectedTeamName === team.teamName}
+            className={`shrink-0 snap-start rounded-full px-4 py-2 text-sm font-semibold transition-all duration-300 border-2 ${
+              selectedTeamName === team.teamName
+                ? "bg-cyan-500 border-cyan-500 text-white shadow-lg shadow-cyan-500/30"
+                : "bg-transparent border-gray-500 text-gray-300 hover:border-cyan-400 hover:text-cyan-400"
+            }`}
+          >
+            {team.teamName}
+          </button>
+        ))}
+      </div>
+
       {/* Team Sections */}
       <div className="w-full flex flex-col gap-16">
-        {teams.map((team) => (
+        {visibleTeams.map((team) => (
           <div
             key={team.teamId}
             id={`team-${team.teamId}`}
             ref={(el) => (sectionRefs.current[`team-${team.teamId}`] = el)}
             className="w-full transition-all duration-500 ease-out scale-100 opacity-100"
           >
+            <div className="mb-6 text-center">
+              <span className="mb-2 block text-xs font-bold tracking-widest uppercase text-cyan-500">
+                KJSSE ACM {selectedYear}
+              </span>
+              <div className="flex justify-center">
+                <h3 className="text-2xl md:text-4xl font-black tracking-tight uppercase text-cyan-400 border-b-2 border-cyan-500 pb-2 px-4">
+                  {team.teamName}
+                </h3>
+              </div>
+              {team.description && (
+                <p className="mx-auto mt-3 max-w-3xl text-sm md:text-lg text-gray-300 font-light leading-relaxed">
+                  {team.description}
+                </p>
+              )}
+            </div>
             <TeamSection
               team={team}
               hoveredMemberId={hoveredMemberId}
               onHoverMember={(id) => setHoveredMemberId(id)}
-              year={selectedYear}
             />
           </div>
         ))}
