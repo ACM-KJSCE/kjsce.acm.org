@@ -9,29 +9,28 @@ body {
     --color: rgb(41, 46, 48);
 
     background-image:
-        linear-gradient(
-            -90deg,
+        linear-gradient(-90deg,
             transparent calc(var(--gap) - var(--line)),
             var(--color) calc(var(--gap) - var(--line) + 1px),
-            var(--color) var(--gap)
-        ),
-        linear-gradient(
-            0deg,
+            var(--color) var(--gap)),
+        linear-gradient(0deg,
             transparent calc(var(--gap) - var(--line)),
             var(--color) calc(var(--gap) - var(--line) + 1px),
-            var(--color) var(--gap)
-        );
+            var(--color) var(--gap));
     background-size: var(--gap) var(--gap);
 }
+
 .logo {
     height: 6em;
     padding: 1.5em;
     will-change: filter;
     transition: filter 300ms;
 }
+
 .logo:hover {
     filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
     filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -40,6 +39,7 @@ body {
     from {
         transform: rotate(0deg);
     }
+
     to {
         transform: rotate(360deg);
     }
@@ -59,20 +59,258 @@ body {
     color: #888;
 }
 
-.about {
-    -webkit-box-shadow: 48px -58px 0px 0px rgb(34, 211, 238);
-    -moz-box-shadow: 48px -58px 0px 0px rgb(34, 211, 238);
-    box-shadow: 48px -58px 0px 0px rgb(34, 211, 238);
+html {
+    scroll-padding-top: 12vh;
 }
 
-@media screen and (max-width: 768px) {
-    .about {
-        -webkit-box-shadow: 20px -20px 0px 0px rgb(34, 211, 238);
-        -moz-box-shadow: 20px -20px 0px 0px rgb(34, 211, 238);
-        box-shadow: 20px -20px 0px 0px rgb(34, 211, 238);
+/* ================================================================
+   About Us: scroll-driven space scene
+   ================================================================ */
+
+/* Full-bleed: break out of the centered container to the viewport width */
+.abt-bleed {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+}
+
+/* Stars/nebula dissolve into the site's black grid at the top and bottom */
+.abt-fade-y {
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 14%, #000 84%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0, #000 14%, #000 84%, transparent 100%);
+}
+
+/* Earth horizon we leave behind at the start of the scene */
+.abt-horizon,
+.ct-horizon {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 230vw;
+    height: 230vw;
+    margin-left: -115vw;
+    border-radius: 50%;
+    background:
+        radial-gradient(120% 60% at 50% 0%, #0a1a3d 0%, #030616 38%, #02030a 62%);
+    box-shadow:
+        0 -2px 0 rgba(165, 243, 252, 0.55),
+        0 -16px 60px 6px rgba(34, 211, 238, 0.35),
+        0 -60px 160px 20px rgba(59, 130, 246, 0.18);
+}
+
+.abt-horizon::after,
+.ct-horizon::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    opacity: 0.85;
+    background:
+        radial-gradient(1.6px 1.6px at 44% 1.6%, #fde68a, transparent),
+        radial-gradient(1.6px 1.6px at 46% 2.4%, #fde68a, transparent),
+        radial-gradient(1.6px 1.6px at 47.5% 1.1%, #fde68a, transparent),
+        radial-gradient(1.6px 1.6px at 49% 3.1%, #fde68a, transparent),
+        radial-gradient(1.6px 1.6px at 50.5% 1.8%, #fde68a, transparent),
+        radial-gradient(1.6px 1.6px at 52% 2.6%, #fde68a, transparent),
+        radial-gradient(1.6px 1.6px at 53.5% 1.3%, #fde68a, transparent),
+        radial-gradient(1.6px 1.6px at 55% 2.9%, #fde68a, transparent),
+        radial-gradient(1.6px 1.6px at 42.5% 3.4%, #fde68a, transparent),
+        radial-gradient(1.6px 1.6px at 57% 2.0%, #fde68a, transparent),
+        radial-gradient(1.6px 1.6px at 45% 4.2%, #fde68a, transparent),
+        radial-gradient(1.6px 1.6px at 51.5% 4.4%, #fde68a, transparent),
+        radial-gradient(1.6px 1.6px at 54.5% 3.8%, #fde68a, transparent),
+        radial-gradient(1.6px 1.6px at 48% 5.0%, #fde68a, transparent),
+        radial-gradient(1.6px 1.6px at 58.5% 3.3%, #fde68a, transparent),
+        radial-gradient(1.6px 1.6px at 41% 2.2%, #fde68a, transparent);
+}
+
+/* Ringed planet body (rings are built in AboutUs.jsx) */
+.abt-planet {
+    background: radial-gradient(circle at 32% 30%, #a5f3fc 0%, #22d3ee 16%, #1e3c72 55%, #020617 100%);
+    box-shadow:
+        0 0 60px 6px rgba(34, 211, 238, 0.25),
+        inset -14px -10px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* Photo overlays: subtle CRT scanlines + a slow scan beam */
+.abt-scanlines {
+    background: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 3px);
+}
+
+.abt-beam {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 22%;
+    background: linear-gradient(to bottom, transparent, rgba(34, 211, 238, 0.1), transparent);
+    animation: abt-beam 7s linear infinite;
+}
+
+/* Shooting stars */
+.abt-shoot {
+    position: absolute;
+    width: 110px;
+    height: 2px;
+    border-radius: 2px;
+    opacity: 0;
+    background: linear-gradient(90deg, #fff, rgba(103, 232, 249, 0.6), transparent);
+    filter: drop-shadow(0 0 6px rgba(103, 232, 249, 0.9));
+    animation: abt-shoot 9s ease-out infinite;
+}
+
+.abt-cursor {
+    animation: abt-blink 1.1s steps(1) infinite;
+}
+
+@keyframes abt-twinkle {
+
+    0%,
+    100% {
+        opacity: 0.35;
+    }
+
+    50% {
+        opacity: 1;
     }
 }
 
-html {
-    scroll-padding-top: 12vh;
+@keyframes abt-blink {
+
+    0%,
+    49% {
+        opacity: 1;
+    }
+
+    50%,
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes abt-beam {
+    from {
+        transform: translateY(-120%);
+    }
+
+    to {
+        transform: translateY(560%);
+    }
+}
+
+@keyframes abt-shoot {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 0, 0) rotate(-35deg);
+    }
+
+    3% {
+        opacity: 1;
+    }
+
+    12% {
+        opacity: 0;
+        transform: translate3d(-420px, 294px, 0) rotate(-35deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate3d(-420px, 294px, 0) rotate(-35deg);
+    }
+}
+
+/* Respect users who ask for less motion */
+@media (prefers-reduced-motion: reduce) {
+    .abt-anim {
+        animation: none !important;
+    }
+
+    .abt-shoot,
+    .abt-beam {
+        display: none;
+    }
+
+    .abt-cursor {
+        opacity: 1;
+    }
+}
+
+/* ================================================================
+   Contact section
+   ================================================================ */
+
+/* Stars fade in from the site's black grid at the top edge */
+.ct-fade-top {
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 22%);
+    mask-image: linear-gradient(to bottom, transparent 0, #000 22%);
+}
+
+/* Card light + border that follow the cursor (position set by spotlight-card.jsx) */
+.ct-spot {
+    background: radial-gradient(280px circle at var(--mx, 50%) var(--my, 50%), rgba(34, 211, 238, 0.14), transparent 65%);
+}
+
+.ct-spot-border {
+    padding: 1px;
+    background: radial-gradient(200px circle at var(--mx, 50%) var(--my, 50%), rgba(103, 232, 249, 0.9), transparent 70%);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+}
+
+/* Light that runs around the form card's border */
+@property --ct-a {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+}
+
+.ct-beam {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    pointer-events: none;
+    background: conic-gradient(from var(--ct-a),
+            transparent 0 62%,
+            rgba(34, 211, 238, 0.95) 80%,
+            rgba(167, 139, 250, 0.95) 92%,
+            transparent 100%);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+    animation: ct-spin 7s linear infinite;
+}
+
+@keyframes ct-spin {
+    to {
+        --ct-a: 360deg;
+    }
+}
+
+/* Orbiting icons. The base transform places each one at its angle,
+   so with reduced motion they simply sit on the orbit. */
+.ct-orbit {
+    transform:
+        rotate(calc(var(--angle) * 1deg)) translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg));
+    animation: ct-orbit calc(var(--duration) * 1s) linear infinite;
+}
+
+@keyframes ct-orbit {
+    0% {
+        transform:
+            rotate(calc(var(--angle) * 1deg)) translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg));
+    }
+
+    100% {
+        transform:
+            rotate(calc(var(--angle) * 1deg + 360deg)) translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg - 360deg));
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ct-orbit,
+    .ct-beam {
+        animation: none;
+    }
 }
