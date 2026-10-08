@@ -10,8 +10,8 @@
                 "name": "Rishi Dadia",
                 "role": "Chairperson",
                 "imageUrl": "/assets/2026-27/rishi.jpg",
-                "bio": "Eager to learn and contribute.",
-                "quote": "Learn and grow.",
+                "bio": "Leading the ACM chapter to new heights.",
+                "quote": "Leadership is action, not position.",
                 "links": { 
                     "codechef": "https://www.codechef.com/users/rishidadia",
                     "github": "https://github.com/rishidadia",
@@ -24,8 +24,8 @@
                 "name": "Kanishka Sahal",
                 "role": "Vice Chairperson",
                 "imageUrl": "/assets/2026-27/kanishka.jpg",
-                "bio": "Building brand awareness.",
-                "quote": "Brand is everything.",
+                "bio": "Dedicated to fostering a collaborative environment.",
+                "quote": "Collaboration fuels innovation.",
                 "links": {
                     "codechef": "",
                     "github": "https://github.com/kanishkasahal24",
@@ -38,8 +38,8 @@
                 "name": "Sai Bhadane",
                 "role": "Secretary",
                 "imageUrl": "/assets/2026-27/sai.jpg",
-                "bio": "Fresh perspective on design.",
-                "quote": "Design is a journey.",
+                "bio": "Ensuring smooth operations and communication.",
+                "quote": "Efficiency is key.",
                 "links": {
                     "codechef": "https://www.codechef.com/users/saiibhadane",
                     "github": "https://github.com/sb-byte",
@@ -52,8 +52,8 @@
                 "name": "Sahil Shah",
                 "role": "Treasurer",
                 "imageUrl": "/assets/2026-27/sahil.jpg",
-                "bio": "Ensuring logistical support.",
-                "quote": "Logistics win wars.",
+                "bio": "Managing resources for sustainable growth.",
+                "quote": "Integrity in every transaction.",
                 "links": {
                     "codechef": "https://www.codechef.com/users/gang_fold_45",
                     "github": "https://github.com/GodWar9",
@@ -71,7 +71,7 @@
                 "id": "tc1",
                 "name": "Mrunmayee Raje",
                 "role": "Tech Head",
-                "imageUrl": "",
+                "imageUrl": "/assets/2026-27/Mrunmayee.jpg",
                 "bio": "",
                 "quote": "",
                 "links":{
@@ -85,7 +85,7 @@
                 "id": "tc2",
                 "name": "Akhil Tyagi",
                 "role": "Jt Tech Head",
-                "imageUrl": "",
+                "imageUrl": "/assets/2026-27/Akhil.jpeg",
                 "bio": "",
                 "quote": "War is where the young and stupid are tricked by the old and bitter into killing each other",
                 "links":{
@@ -113,7 +113,7 @@
                 "id": "tc4",
                 "name": "Varun Mutha",
                 "role": "Tech Team Member",
-                "imageUrl": "",
+                "imageUrl": "/assets/2026-27/Varun.jpeg",
                 "bio": "Executor..",
                 "quote": "Festina lente",
                 "links":{
@@ -168,13 +168,13 @@
         ]
     },
     {
-        "teamName": "Media Graphics & Operations Team",
+        "teamName": "Media-Graphics & Operations Team",
         "description": "Visualizing ideas and designing experiences.",
         "members":[
             {
                 "id": "mo1",
                 "name": "Netal Gupta",
-                "role": "Media Graphics & Operations Head",
+                "role": "Media-Graphics & Operations Head",
                 "imageUrl": "/assets/2026-27/netal.png",
                 "bio": "Plan. Work. Conquer.",
                 "quote": "Live your life like a main character",
@@ -188,8 +188,8 @@
             {
                 "id": "mo2",
                 "name": "Sameeksha Pawar",
-                "role": "Jt Media Graphics & Operations Head",
-                "imageUrl": "",
+                "role": "Jt Media-Graphics & Operations Head",
+                "imageUrl": "/assets/2026-27/sameeksha.jpg",
                 "bio": "Curious mind. Ambitious heart.",
                 "quote": "Own your story.",
                 "links":{
@@ -202,7 +202,7 @@
             {
                 "id": "mo3",
                 "name": "Omkar Avhad ",
-                "role": "Media Graphics & Operations Team Member",
+                "role": "Media-Graphics & Operations Team Member",
                 "imageUrl": "/assets/2026-27/omkar_avhad.jpeg",
                 "bio": "Bit of everything in my palette",
                 "quote": "BE ZEPHYR",
@@ -216,7 +216,7 @@
             {
                 "id": "mo4",
                 "name": "Dhruv Chavan ",
-                "role": "Media Graphics & Operations Team Member ",
+                "role": "Media-Graphics & Operations Team Member ",
                 "imageUrl": "/assets/2026-27/Dhruv.jpg",
                 "bio": "I paint my own way",
                 "quote": "Make it happen ",
@@ -230,7 +230,7 @@
             {
                 "id": "mo5",
                 "name": "Neoma Kanchan",
-                "role": "Media Graphics & Operations Team Member",
+                "role": "Media-Graphics & Operations Team Member",
                 "imageUrl": "/assets/2026-27/neomakanchan.jpg",
                 "bio": "Heal. Grow. Smile",
                 "quote": "lagging versatility ",
@@ -244,7 +244,7 @@
             {
                 "id": "mo6",
                 "name": "Rudraksh Sahane",
-                "role": "Media Graphics & Operations Team Member",
+                "role": "Media-Graphics & Operations Team Member",
                 "imageUrl": "",
                 "bio": "Stay Limitless",
                 "quote": "God's plan",
@@ -279,7 +279,7 @@
                 "id": "mk2",
                 "name": "Krishna Pisal",
                 "role": "Jt Marketing Head",
-                "imageUrl": "",
+                "imageUrl": "/assets/2026-27/krishna.jpg",
                 "bio": "",
                 "quote": "",
                 "links":{
