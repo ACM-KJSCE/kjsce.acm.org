@@ -1,10 +1,11 @@
 import { useState, useMemo, useEffect, useRef } from "react";
 import teams2025_2026 from "../data/teams-2025-2026.json";
 import teams2024_2025 from "../data/teams-2024-2025.json";
+import teams2026_2027 from "../data/teams-2026-2027.json";
 import TeamSection from "./TeamSection";
 
 // Combine the separate year files into a single array
-const teamsData = [teams2025_2026, teams2024_2025];
+const teamsData = [teams2026_2027, teams2025_2026, teams2024_2025];
 
 const TeamShowcase = () => {
   const [hoveredMemberId, setHoveredMemberId] = useState(null);
