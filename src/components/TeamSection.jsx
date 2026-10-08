@@ -109,11 +109,10 @@ export default function TeamSection({
             >
               <button
                 onClick={() => handleMemberSelect(member.id)}
-                className={`w-full h-72 rounded-2xl overflow-hidden flex items-center justify-center transition-all duration-300 border-2 outline-none focus:outline-none ${
-                  hoveredMemberId === member.id
+                className={`w-full h-72 rounded-2xl overflow-hidden flex items-center justify-center transition-all duration-300 border-2 outline-none focus:outline-none ${hoveredMemberId === member.id
                     ? "scale-105 shadow-[0_0_20px_rgba(6,182,212,0.4)] ring-2 ring-cyan-400 z-10 bg-cyan-900/40 border-cyan-400"
                     : `scale-100 opacity-100 ${pastelColors[index % pastelColors.length]}`
-                }`}
+                  }`}
                 aria-label={`View ${member.name}'s details`}
                 aria-pressed={hoveredMemberId === member.id}
                 title={`${member.name}${member.role ? ` — ${member.role}` : ""}`}
@@ -248,11 +247,10 @@ export default function TeamSection({
                 >
                   <button
                     onClick={() => handleMemberSelect(member.id)}
-                    className={`w-full h-40 md:h-44 rounded-xl overflow-hidden flex items-center justify-center transition-all duration-300 border-2 outline-none focus:outline-none ${
-                      isSelected
+                    className={`w-full h-40 md:h-44 rounded-xl overflow-hidden flex items-center justify-center transition-all duration-300 border-2 outline-none focus:outline-none ${isSelected
                         ? "scale-105 shadow-[0_0_20px_rgba(6,182,212,0.4)] ring-2 ring-cyan-400 z-10 bg-cyan-900/40 border-cyan-400"
                         : `scale-100 opacity-100 ${pastelColors[index % pastelColors.length]}`
-                    }`}
+                      }`}
                     aria-label={`View ${member.name}'s details`}
                     aria-pressed={isSelected}
                     title={`${member.name}${member.role ? ` — ${member.role}` : ""}`}

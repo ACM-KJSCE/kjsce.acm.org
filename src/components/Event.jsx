@@ -26,7 +26,7 @@ function Event() {
             <motion.div
               key={currentIndex}
               initial={{ opacity: 0, scale: 1.1 }}
-              animate={{ opacity: 1, scale: 1 }}  
+              animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.7 }}
               className="absolute inset-0 w-full h-full"
