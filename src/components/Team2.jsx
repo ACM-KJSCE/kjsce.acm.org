@@ -4,7 +4,7 @@ function Team2() {
       <div id="our-team" className="my-5 h-full flex flex-col">
         <div className="flex flex-col items-center w-full justify-center">
           <h1 className="text-2xl md:text-4xl uppercase font-black text-white px-4 md:px-8 pb-2 md:pb-4 mb-2 md:mb-8 border-b-cyan-400 border-b-2">
-            Our Team
+            Our <span className="text-cyan-400">Team</span>
           </h1>
           <div className="flex flex-col md:flex-row items-center justify-center w-auto gap-2 md:gap-4 mt-4 md:mt-8 border border-gray-700 shadow-lg rounded-lg p-4 md:p-8 bg-[#141517]/50 backdrop-blur-sm">
             <img

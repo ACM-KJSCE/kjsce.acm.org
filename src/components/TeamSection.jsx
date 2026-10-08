@@ -2,18 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import { SiLeetcode } from "react-icons/si";
 
-const pastelColors = [
-  "bg-pink-500 text-pink-300 border-pink-500/50",
-  "bg-blue-500/20 text-blue-300 border-blue-500/50",
-  "bg-yellow-500/20 text-yellow-300 border-yellow-500/50",
-  "bg-purple-500/20 text-purple-300 border-purple-500/50",
-  "bg-orange-500/20 text-orange-300 border-orange-500/50",
-  "bg-red-500/20 text-red-300 border-red-500/50",
-  "bg-teal-500/20 text-teal-300 border-teal-500/50",
-  "bg-indigo-500/20 text-indigo-300 border-indigo-500/50",
-  "bg-lime-500/20 text-lime-300 border-lime-500/50",
-];
-
 const scrollMobilePopupToCenter = (card) => {
   if (!card) return;
 
@@ -100,19 +88,20 @@ export default function TeamSection({
   return (
     <div className="w-full h-[90%] flex items-center justify-center p-4 md:p-8 md:h/full">
       {/* Desktop Layout - Centered member grid with popup detail card overlay */}
-      <div className="hidden lg:flex max-w-7xl w-full justify-center items-center min-h-[500px] relative">
+      <div className="hidden lg:flex max-w-7xl w-full justify-center items-center relative">
         <div className="flex flex-wrap justify-center gap-8 max-w-5xl mx-auto">
-          {team.members.map((member, index) => (
+          {team.members.map((member) => (
             <div
               key={member.id}
               className="flex flex-col items-center text-center w-52"
             >
               <button
                 onClick={() => handleMemberSelect(member.id)}
-                className={`w-full h-72 rounded-2xl overflow-hidden flex items-center justify-center transition-all duration-300 border-2 outline-none focus:outline-none ${hoveredMemberId === member.id
-                    ? "scale-105 shadow-[0_0_20px_rgba(6,182,212,0.4)] ring-2 ring-cyan-400 z-10 bg-cyan-900/40 border-cyan-400"
-                    : `scale-100 opacity-100 ${pastelColors[index % pastelColors.length]}`
-                  }`}
+                className={`member-card-border relative w-full h-72 rounded-2xl overflow-hidden flex items-center justify-center transition-all duration-300 outline-none focus:outline-none ${
+                  hoveredMemberId === member.id
+                    ? "scale-105 shadow-[0_0_20px_rgba(6,182,212,0.4)] ring-2 ring-cyan-400 z-10 bg-cyan-900/40"
+                    : "scale-100 opacity-100 bg-slate-900/80 text-gray-200"
+                }`}
                 aria-label={`View ${member.name}'s details`}
                 aria-pressed={hoveredMemberId === member.id}
                 title={`${member.name}${member.role ? ` — ${member.role}` : ""}`}
@@ -238,7 +227,7 @@ export default function TeamSection({
       <div className="lg:hidden max-w-7xl w-full flex flex-col gap-6 relative">
         <div className="flex justify-center items-center">
           <div className="flex flex-wrap justify-center gap-4 md:gap-6 max-w-lg mx-auto p-2 md:p-4">
-            {team.members.map((member, index) => {
+            {team.members.map((member) => {
               const isSelected = hoveredMemberId === member.id;
               return (
                 <div
@@ -247,10 +236,11 @@ export default function TeamSection({
                 >
                   <button
                     onClick={() => handleMemberSelect(member.id)}
-                    className={`w-full h-40 md:h-44 rounded-xl overflow-hidden flex items-center justify-center transition-all duration-300 border-2 outline-none focus:outline-none ${isSelected
-                        ? "scale-105 shadow-[0_0_20px_rgba(6,182,212,0.4)] ring-2 ring-cyan-400 z-10 bg-cyan-900/40 border-cyan-400"
-                        : `scale-100 opacity-100 ${pastelColors[index % pastelColors.length]}`
-                      }`}
+                    className={`member-card-border relative w-full h-40 md:h-44 rounded-xl overflow-hidden flex items-center justify-center transition-all duration-300 outline-none focus:outline-none ${
+                      isSelected
+                        ? "scale-105 shadow-[0_0_20px_rgba(6,182,212,0.4)] ring-2 ring-cyan-400 z-10 bg-cyan-900/40"
+                        : "scale-100 opacity-100 bg-slate-900/80 text-gray-200"
+                    }`}
                     aria-label={`View ${member.name}'s details`}
                     aria-pressed={isSelected}
                     title={`${member.name}${member.role ? ` — ${member.role}` : ""}`}

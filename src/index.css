@@ -1,3 +1,54 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@property --member-card-border-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.member-card-border {
+  isolation: isolate;
+}
+
+.member-card-border::before {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  padding: 2px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--member-card-border-angle),
+    #22d3ee,
+    #a855f7,
+    #22d3ee,
+    #a855f7,
+    #22d3ee
+  );
+  content: "";
+  pointer-events: none;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: member-card-border-spin 4s linear infinite;
+}
+
+.member-card-border:hover::before,
+.member-card-border:focus-visible::before {
+  filter: drop-shadow(0 0 5px #22d3ee);
+}
+
+@keyframes member-card-border-spin {
+  to {
+    --member-card-border-angle: 360deg;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .member-card-border::before {
+    animation: none;
+  }
+}
