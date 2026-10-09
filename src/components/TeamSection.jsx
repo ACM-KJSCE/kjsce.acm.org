@@ -217,12 +217,12 @@ export default function TeamSection({
                         )}
                         {selectedMember.links.codeforces && (
                           <a href={selectedMember.links.codeforces} target="_blank" rel="noopener noreferrer" className="transition-colors duration-300 hover:scale-110">
-                            <img src="./assets/cfc.svg" alt="CodeForces" className="w-7 h-7" />
+                            <img src="/assets/cfc.svg" alt="CodeForces" className="w-7 h-7" />
                           </a>
                         )}
                         {selectedMember.links.codechef && (
                           <a href={selectedMember.links.codechef} target="_blank" rel="noopener noreferrer" className="transition-colors duration-300 hover:scale-110">
-                            <img src="./assets/cc.jpeg" alt="CodeChef" className="w-7 h-7 rounded-full" />
+                            <img src="/assets/cc.jpeg" alt="CodeChef" className="w-7 h-7 rounded-full" />
                           </a>
                         )}
                       </div>
@@ -367,12 +367,12 @@ export default function TeamSection({
                         )}
                         {selectedMember.links.codeforces && (
                           <a href={selectedMember.links.codeforces} target="_blank" rel="noopener noreferrer" className="transition-colors duration-300 hover:scale-110">
-                            <img src="./assets/cfc.svg" alt="CodeForces" className="w-5 h-5" />
+                            <img src="/assets/cfc.svg" alt="CodeForces" className="w-5 h-5" />
                           </a>
                         )}
                         {selectedMember.links.codechef && (
                           <a href={selectedMember.links.codechef} target="_blank" rel="noopener noreferrer" className="transition-colors duration-300 hover:scale-110">
-                            <img src="./assets/cc.jpeg" alt="CodeChef" className="w-5 h-5 rounded-full" />
+                            <img src="/assets/cc.jpeg" alt="CodeChef" className="w-5 h-5 rounded-full" />
                           </a>
                         )}
                       </div>
