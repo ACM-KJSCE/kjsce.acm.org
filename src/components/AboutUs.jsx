@@ -426,8 +426,8 @@ function CinematicScene() {
               <LiveDot />
               <span>{"// Mission Briefing"}</span>
             </div>
-            <h1 className="mt-4 border-b-2 border-cyan-400 px-8 pb-4 text-4xl font-black uppercase text-white">
-              About Us
+            <h1 className="text-3xl md:text-4xl lg:text-4xl font-black uppercase tracking-tight text-white mb-3">
+              About <span className="text-cyan-400">Us</span>
             </h1>
             <Headline p={p} />
             <motion.div
@@ -588,8 +588,8 @@ function ModuleTrack() {
       <div className="sticky top-0 flex h-svh flex-col justify-center overflow-hidden pb-14 pt-24">
         <div className="mb-6 flex flex-col items-center px-4 text-center md:mb-10">
           <Tag>{"// Mission Modules"}</Tag>
-          <h2 className="mt-4 border-b-2 border-cyan-400 px-8 pb-4 text-3xl font-black uppercase text-white md:text-4xl">
-            What We Do
+          <h2 className="text-3xl md:text-4xl lg:text-4xl font-black uppercase tracking-tight text-white mb-3">
+            What <span className="text-cyan-400">We Do</span>
           </h2>
         </div>
 

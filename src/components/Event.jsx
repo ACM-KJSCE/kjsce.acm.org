@@ -20,41 +20,19 @@ const smoothstep = (edge0, edge1, x) => {
 };
 
 // Individual Event Card with Dynamic Viewport Scroll Expand & Zoom In/Out
-function EventCard({ event, index, totalEvents, onEnterView }) {
+function EventCard({ event, index, totalEvents, isActive }) {
   const cardRef = useRef(null);
   const frameRef = useRef(null);
   const mediaRef = useRef(null);
   const overlayRef = useRef(null);
   const titleRef = useRef(null);
   const scrimRef = useRef(null);
+  const progressRef = useRef(0);
 
   useEffect(() => {
-    const card = cardRef.current;
     const frame = frameRef.current;
     const media = mediaRef.current;
-    if (!card || !frame || !media) return;
-
-    let raf = 0;
-    let currentP = 0;
-    let targetP = 0;
-
-    const read = () => {
-      const rect = card.getBoundingClientRect();
-      const H = window.innerHeight;
-      const cardCenter = rect.top + rect.height / 2;
-      const screenCenter = H / 2;
-
-      // Distance from screen center (normalized by 55% of viewport height)
-      const dist = Math.abs(cardCenter - screenCenter) / (H * 0.55);
-      const rawP = clamp(1 - dist, 0, 1);
-      const progress = smoothstep(0, 1, rawP);
-
-      if (progress > 0.4 && onEnterView) {
-        onEnterView(index);
-      }
-
-      return progress;
-    };
+    if (!frame || !media) return;
 
     const update = (p) => {
       const isMobile = window.innerWidth < 768;
@@ -97,33 +75,32 @@ function EventCard({ event, index, totalEvents, onEnterView }) {
       }
     };
 
-    const tick = () => {
-      currentP += (targetP - currentP) * 0.12;
-      update(currentP);
-      if (Math.abs(targetP - currentP) > 0.0005) {
-        raf = requestAnimationFrame(tick);
+    const startProgress = progressRef.current;
+    const targetProgress = isActive ? 1 : 0;
+    const startTime = performance.now();
+    const duration = 300;
+    let animationFrame = 0;
+
+    const animate = (time) => {
+      const elapsed = Math.min((time - startTime) / duration, 1);
+      const progress =
+        startProgress +
+        (targetProgress - startProgress) * smoothstep(0, 1, elapsed);
+
+      progressRef.current = progress;
+      update(progress);
+
+      if (elapsed < 1) {
+        animationFrame = requestAnimationFrame(animate);
       }
     };
 
-    const onScroll = () => {
-      targetP = read();
-      cancelAnimationFrame(raf);
-      raf = requestAnimationFrame(tick);
-    };
-
-    targetP = read();
-    currentP = targetP;
-    update(currentP);
-
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onScroll);
+    animationFrame = requestAnimationFrame(animate);
 
     return () => {
-      cancelAnimationFrame(raf);
-      window.removeEventListener('scroll', onScroll);
-      window.removeEventListener('resize', onScroll);
+      cancelAnimationFrame(animationFrame);
     };
-  }, [index, onEnterView]);
+  }, [isActive]);
 
   const externalLink = event.description
     ? (event.description.match(/https?:\/\/[^\s]+/) || [])[0]
@@ -294,7 +271,60 @@ function EventCard({ event, index, totalEvents, onEnterView }) {
 function Event() {
   const [activeIdx, setActiveIdx] = useState(0);
 
+  useEffect(() => {
+    let frameId = 0;
+
+    const updateActiveEvent = () => {
+      frameId = 0;
+      const screenCenter = window.innerHeight / 2;
+      let closestIndex = 0;
+      let closestDistance = Infinity;
+
+      events.forEach((_, index) => {
+        const card = document.getElementById(`event-card-${index}`);
+        if (!card) return;
+
+        const rect = card.getBoundingClientRect();
+        const distance = Math.abs(rect.top + rect.height / 2 - screenCenter);
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestIndex = index;
+        }
+      });
+
+      setActiveIdx((currentIndex) =>
+        currentIndex === closestIndex ? currentIndex : closestIndex
+      );
+    };
+
+    const scheduleUpdate = () => {
+      if (!frameId) {
+        frameId = window.requestAnimationFrame(updateActiveEvent);
+      }
+    };
+
+    const eventCards = document.querySelectorAll(
+      '#events [id^="event-card-"]'
+    );
+    const resizeObserver = new ResizeObserver(scheduleUpdate);
+    eventCards.forEach((card) => resizeObserver.observe(card));
+
+    scheduleUpdate();
+    window.addEventListener('scroll', scheduleUpdate, { passive: true });
+    window.addEventListener('resize', scheduleUpdate);
+
+    return () => {
+      window.removeEventListener('scroll', scheduleUpdate);
+      window.removeEventListener('resize', scheduleUpdate);
+      resizeObserver.disconnect();
+      if (frameId) {
+        window.cancelAnimationFrame(frameId);
+      }
+    };
+  }, []);
+
   const scrollToEvent = (index) => {
+    setActiveIdx(index);
     const el = document.getElementById(`event-card-${index}`);
     if (el) {
       el.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -305,20 +335,17 @@ function Event() {
     <div id="events" className="relative w-full text-white select-none">
       {/* Top Header Section */}
       <div className="max-w-6xl mx-auto px-4 pt-6 pb-4 text-center">
-        <h1 className="text-3xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight text-white mb-3">
+        <h1 className="text-3xl md:text-4xl lg:text-4xl font-black uppercase tracking-tight text-white mb-10">
           Our <span className="text-cyan-400">Events</span>
         </h1>
 
         {/* Quick Navigation Pills matching Team Showcase Style */}
-        <div className="flex flex-wrap items-center justify-center gap-3 max-w-5xl mx-auto px-4">
+        <div className="flex justify-start gap-3 flex-nowrap overflow-x-auto max-w-5xl mx-auto px-4 pb-2 snap-x snap-mandatory md:justify-center md:flex-wrap md:overflow-visible md:pb-0">
           {events.map((ev, idx) => (
             <button
               key={idx}
               onClick={() => scrollToEvent(idx)}
-              className={`rounded-full px-4 py-2 text-sm font-semibold transition-all duration-300 border-2 ${activeIdx === idx
-                  ? 'bg-cyan-500 border-cyan-500 text-white shadow-lg shadow-cyan-500/30'
-                  : 'bg-transparent border-gray-500 text-gray-300 hover:border-cyan-400 hover:text-cyan-400'
-                }`}
+              className="shrink-0 snap-start rounded-full px-4 py-2 text-sm font-semibold border-2 bg-transparent border-cyan-400 text-gray-300"
             >
               {ev.title}
             </button>
@@ -358,7 +385,7 @@ function Event() {
             event={event}
             index={idx}
             totalEvents={events.length}
-            onEnterView={setActiveIdx}
+            isActive={activeIdx === idx}
           />
         ))}
       </div>
