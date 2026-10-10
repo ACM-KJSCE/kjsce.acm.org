@@ -59,6 +59,20 @@ body {
     color: #888;
 }
 
+.about {
+    -webkit-box-shadow: 48px -58px 0px 0px rgb(34, 211, 238);
+    -moz-box-shadow: 48px -58px 0px 0px rgb(34, 211, 238);
+    box-shadow: 48px -58px 0px 0px rgb(34, 211, 238);
+}
+
+@media screen and (max-width: 768px) {
+    .about {
+        -webkit-box-shadow: 20px -20px 0px 0px rgb(34, 211, 238);
+        -moz-box-shadow: 20px -20px 0px 0px rgb(34, 211, 238);
+        box-shadow: 20px -20px 0px 0px rgb(34, 211, 238);
+    }
+}
+
 html {
     scroll-padding-top: 12vh;
 }
