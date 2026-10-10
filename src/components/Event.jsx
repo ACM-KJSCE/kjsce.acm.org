@@ -305,7 +305,7 @@ function Event() {
     <div id="events" className="relative w-full text-white select-none">
       {/* Top Header Section */}
       <div className="max-w-6xl mx-auto px-4 pt-6 pb-4 text-center">
-        <h1 className="text-3xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight text-white mb-3">
+        <h1 className="text-3xl md:text-4xl lg:text-4xl font-black uppercase tracking-tight text-white mb-10">
           Our <span className="text-cyan-400">Events</span>
         </h1>
 

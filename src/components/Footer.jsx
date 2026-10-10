@@ -285,8 +285,8 @@ const Footer = () => {
       <div className="relative z-10 mx-auto max-w-6xl px-4 md:px-8">
         {/* Heading, same style as the other sections */}
         <motion.div {...reveal(0)} className="flex flex-col items-center text-center">
-          <h2 className="border-b-2 border-cyan-400 px-8 pb-4 text-3xl font-black uppercase text-white md:text-4xl">
-            Contact Us
+          <h2 className="text-3xl md:text-4xl lg:text-4xl font-black uppercase tracking-tight text-white mb-3">
+            Contact <span className="text-cyan-400">Us</span>
           </h2>
         </motion.div>
 
