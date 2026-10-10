@@ -3,8 +3,8 @@ import PageLayout from "../components/PageLayout";
 
 const EventsSectionPage = () => {
   return (
-    <PageLayout>
-      <div className="container mx-auto px-4 py-10">
+    <PageLayout className="w-full overflow-x-hidden">
+      <div className="w-full">
         <Event />
       </div>
     </PageLayout>

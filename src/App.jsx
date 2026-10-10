@@ -39,7 +39,7 @@ function App() {
 
   return (
     <PageLayout>
-      <div className="w-full h-full overflow-hidden">
+      <div className="w-full h-full overflow-clip">
         <div className="container mx-auto">
           <Hero />
           <AboutUs />
