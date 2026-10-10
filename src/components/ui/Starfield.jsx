@@ -1,4 +1,4 @@
-import { motion, motionValue, useTransform } from "framer-motion";
+import { motion, motionValue, useSpring, useTransform } from "framer-motion";
 
 // Re-uses the .abt-anim / abt-twinkle rules from App.css (twinkle + reduced-motion).
 const ZERO = motionValue(0);
@@ -28,13 +28,14 @@ function makeLayer(seed, count, tile, radius, colors) {
 }
 
 const LAYERS = [
-    { style: makeLayer(101, 30, 360, 1, ["#ffffff", "#dbeafe", "#bfdbfe"]), anim: "abt-twinkle 6s ease-in-out infinite", drift: 50 },
-    { style: makeLayer(131, 14, 560, 1.6, ["#a5f3fc", "#ffffff", "#c4b5fd", "#fde68a"]), anim: "abt-twinkle 8s ease-in-out -3s infinite", drift: 110 },
+    { style: makeLayer(101, 30, 360, 1, ["#ffffff", "#dbeafe", "#bfdbfe"]), anim: "abt-twinkle 1200s ease-in-out infinite", drift: 10 },
+    { style: makeLayer(131, 14, 560, 1.6, ["#a5f3fc", "#ffffff", "#c4b5fd", "#fde68a"]), anim: "abt-twinkle 1200s ease-in-out infinite", drift: 22 },
 ];
 
 export function Starfield({ progress = ZERO }) {
-    const y0 = useTransform(progress, [0, 1], [-LAYERS[0].drift, 0]);
-    const y1 = useTransform(progress, [0, 1], [-LAYERS[1].drift, 0]);
+    const easedProgress = useSpring(progress, { stiffness: 20, damping: 30, mass: 1 });
+    const y0 = useTransform(easedProgress, [0, 1], [-LAYERS[0].drift, 0]);
+    const y1 = useTransform(easedProgress, [0, 1], [-LAYERS[1].drift, 0]);
     const ys = [y0, y1];
 
     return (

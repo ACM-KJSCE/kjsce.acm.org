@@ -16,7 +16,7 @@ const GlobalEffects = ({ children }) => {
       <div className="fixed inset-0 z-[-1] pointer-events-none bg-black">
         <Starfield
           stars={1200}
-          speed={3}
+          speed={0.5}
           spread={5}
           focal={1.5}
           twinkle={0.5}

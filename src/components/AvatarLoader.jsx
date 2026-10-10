@@ -51,7 +51,7 @@ export default function AvatarLoader({ onComplete, durationMs = 12500 }) {
           <div className="absolute inset-0 z-0">
             <Starfield
               stars={1200}
-              speed={3}
+              speed={0.5}
               spread={5}
               focal={1.5}
               twinkle={0.5}
