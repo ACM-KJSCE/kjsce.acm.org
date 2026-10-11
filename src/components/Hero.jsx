@@ -12,15 +12,15 @@ function Hero() {
 
   return (
     <section className="w-full flex justify-center px-4 md:px-4 lg:px-4">
-      <div className="relative w-full max-w-7xl h-[85vh] rounded-3xl overflow-hidden">
+      <div className="relative w-full max-w-7xl h-[85vh] rounded-3xl ">
 
         {/* Content Overlay */}
         <div className="absolute inset-0 z-10 flex items-center justify-center px-6 md:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl w-full items-center -mt-16 lg:-mt-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl w-full items-center lg:-mt-24">
             {/* LEFT — TEXT */}
             <div className="text-white text-center lg:text-left z-20">
 
-              <div className="mt-8 mb-4 flex flex-col items-center lg:items-start justify-center lg:justify-start">
+              <div className="mt-8 md:mt-20 flex flex-col items-center lg:items-start justify-center lg:justify-start">
                 <div className="w-full max-w-xl md:max-w-3xl lg:max-w-[40rem] h-[120px] md:h-[160px] lg:h-[220px] relative">
                   <MorphingText
                     texts={words}
