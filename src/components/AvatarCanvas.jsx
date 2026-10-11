@@ -36,7 +36,10 @@ export default function AvatarCanvas({
     const updateCameraDistance = (w, h) => {
       const isMobile = w < 768;
       if (isFullScreen) {
-        camera.position.set(0, 0, isMobile ? 620 : 540);
+        const mobileAspect = w / h;
+        const mobileFitDistance =
+          (240 * 1.2) / (2 * Math.tan((camera.fov * Math.PI) / 360) * mobileAspect);
+        camera.position.set(0, 0, isMobile ? Math.max(620, mobileFitDistance) : 540);
       } else {
         // Zoom in to make the blob bigger when embedded in a layout
         camera.position.set(0, 0, isMobile ? 520 : 380);
