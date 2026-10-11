@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { FaGithub, FaLinkedin } from "react-icons/fa6";
-import { SiLeetcode } from "react-icons/si";
+import MemberCard from "./MemberCard";
 
 const scrollMobilePopupToCenter = (card) => {
   if (!card) return;
@@ -22,6 +21,7 @@ const scrollMobilePopupToCenter = (card) => {
 
 export default function TeamSection({
   team,
+  year,
   hoveredMemberId,
   onHoverMember,
 }) {
@@ -85,6 +85,16 @@ export default function TeamSection({
     }, 450);
   };
 
+  useEffect(() => {
+    if (!selectedMember) return undefined;
+    const onKeyDown = (e) => {
+      if (e.key === "Escape") handleMemberClose();
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedMember, isPopupClosing]);
+
   return (
     <div className="w-full h-[90%] flex items-center justify-center p-4 md:p-8 md:h/full">
       {/* Desktop Layout - Centered member grid with popup detail card overlay */}
@@ -140,84 +150,7 @@ export default function TeamSection({
               className={`flip-card popup-card ${isPopupClosing ? "popup-card-closing" : ""}`}
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="flip-card-inner is-flipped">
-                <div className="flip-card-front">
-                  <div className="w-full h-full bg-[#16182e] rounded-[28px] border border-white/10 shadow-2xl overflow-hidden">
-                    <img
-                      src={selectedMember.imageUrl}
-                      alt={selectedMember.name}
-                      className="w-full h-80 object-cover"
-                    />
-                    <div className="p-6 text-center">
-                      <h3 className="text-3xl font-bold text-white">{selectedMember.name}</h3>
-                      <p className="mt-2 text-xl text-cyan-400">{selectedMember.role}</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flip-card-back">
-                  <div className="w-full h-full bg-[#16182e] rounded-[28px] border border-cyan-500/30 shadow-2xl p-6 relative overflow-hidden">
-                    <button
-                      className="absolute top-4 right-4 text-2xl text-white/80 hover:text-white"
-                      onClick={handleMemberClose}
-                      aria-label="Close member details"
-                    >
-                      &times;
-                    </button>
-
-                    <div className="flex justify-center mb-4">
-                      <img
-                        src={selectedMember.imageUrl}
-                        alt={selectedMember.name}
-                        className="w-28 h-28 rounded-2xl object-cover border-2 border-cyan-400/60"
-                      />
-                    </div>
-
-                    <h3 className="text-3xl font-bold text-white text-center">{selectedMember.name}</h3>
-                    <p className="text-lg text-cyan-400 text-center mt-2">{selectedMember.role}</p>
-
-                    <blockquote className="mt-5 text-lg italic text-gray-200 text-center leading-relaxed">
-                      &ldquo;{selectedMember.quote}&rdquo;
-                    </blockquote>
-
-                    {selectedMember.bio && (
-                      <p className="mt-4 text-sm text-gray-300 text-center leading-relaxed">
-                        {selectedMember.bio}
-                      </p>
-                    )}
-
-                    {selectedMember.links && (
-                      <div className="mt-6 flex justify-center gap-4 text-2xl">
-                        {selectedMember.links.github && (
-                          <a href={selectedMember.links.github} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors duration-300 hover:scale-110">
-                            <FaGithub />
-                          </a>
-                        )}
-                        {selectedMember.links.linkedin && (
-                          <a href={selectedMember.links.linkedin} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition-colors duration-300 hover:scale-110">
-                            <FaLinkedin />
-                          </a>
-                        )}
-                        {selectedMember.links.leetcode && (
-                          <a href={selectedMember.links.leetcode} target="_blank" rel="noopener noreferrer" className="text-yellow-500 hover:text-yellow-400 transition-colors duration-300 hover:scale-110">
-                            <SiLeetcode />
-                          </a>
-                        )}
-                        {selectedMember.links.codeforces && (
-                          <a href={selectedMember.links.codeforces} target="_blank" rel="noopener noreferrer" className="transition-colors duration-300 hover:scale-110">
-                            <img src="/assets/cfc.svg" alt="CodeForces" className="w-7 h-7" />
-                          </a>
-                        )}
-                        {selectedMember.links.codechef && (
-                          <a href={selectedMember.links.codechef} target="_blank" rel="noopener noreferrer" className="transition-colors duration-300 hover:scale-110">
-                            <img src="/assets/cc.jpeg" alt="CodeChef" className="w-7 h-7 rounded-full" />
-                          </a>
-                        )}
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
+              <MemberCard member={selectedMember} year={year} />
             </div>
           </div>
         )}
@@ -290,84 +223,7 @@ export default function TeamSection({
               className={`flip-card flip-card-mobile popup-card ${isPopupClosing ? "popup-card-closing" : ""}`}
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="flip-card-inner is-flipped">
-                <div className="flip-card-front">
-                  <div className="w-full h-full bg-[#16182e] rounded-[24px] border border-white/10 shadow-2xl overflow-hidden">
-                    <img
-                      src={selectedMember.imageUrl}
-                      alt={selectedMember.name}
-                      className="w-full h-64 object-cover"
-                    />
-                    <div className="p-5 text-center">
-                      <h3 className="text-2xl font-bold text-white">{selectedMember.name}</h3>
-                      <p className="mt-2 text-base text-cyan-400">{selectedMember.role}</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flip-card-back">
-                  <div className="w-full h-full bg-[#16182e] rounded-[24px] border border-cyan-500/30 shadow-2xl p-5 relative overflow-hidden">
-                    <button
-                      className="absolute top-3 right-3 text-xl text-white/80 hover:text-white"
-                      onClick={handleMemberClose}
-                      aria-label="Close member details"
-                    >
-                      &times;
-                    </button>
-
-                    <div className="flex justify-center mb-3">
-                      <img
-                        src={selectedMember.imageUrl}
-                        alt={selectedMember.name}
-                        className="w-20 h-20 rounded-2xl object-cover border-2 border-cyan-400/60"
-                      />
-                    </div>
-
-                    <h3 className="text-2xl font-bold text-white text-center">{selectedMember.name}</h3>
-                    <p className="text-base text-cyan-400 text-center mt-1">{selectedMember.role}</p>
-
-                    <blockquote className="mt-4 text-base italic text-gray-200 text-center leading-relaxed">
-                      &ldquo;{selectedMember.quote}&rdquo;
-                    </blockquote>
-
-                    {selectedMember.bio && (
-                      <p className="mt-3 text-xs text-gray-300 text-center leading-relaxed">
-                        {selectedMember.bio}
-                      </p>
-                    )}
-
-                    {selectedMember.links && (
-                      <div className="mt-4 flex justify-center gap-3 text-xl">
-                        {selectedMember.links.github && (
-                          <a href={selectedMember.links.github} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors duration-300 hover:scale-110">
-                            <FaGithub />
-                          </a>
-                        )}
-                        {selectedMember.links.linkedin && (
-                          <a href={selectedMember.links.linkedin} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition-colors duration-300 hover:scale-110">
-                            <FaLinkedin />
-                          </a>
-                        )}
-                        {selectedMember.links.leetcode && (
-                          <a href={selectedMember.links.leetcode} target="_blank" rel="noopener noreferrer" className="text-yellow-500 hover:text-yellow-400 transition-colors duration-300 hover:scale-110">
-                            <SiLeetcode />
-                          </a>
-                        )}
-                        {selectedMember.links.codeforces && (
-                          <a href={selectedMember.links.codeforces} target="_blank" rel="noopener noreferrer" className="transition-colors duration-300 hover:scale-110">
-                            <img src="/assets/cfc.svg" alt="CodeForces" className="w-5 h-5" />
-                          </a>
-                        )}
-                        {selectedMember.links.codechef && (
-                          <a href={selectedMember.links.codechef} target="_blank" rel="noopener noreferrer" className="transition-colors duration-300 hover:scale-110">
-                            <img src="/assets/cc.jpeg" alt="CodeChef" className="w-5 h-5 rounded-full" />
-                          </a>
-                        )}
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
+              <MemberCard member={selectedMember} year={year} />
             </div>
           </div>
         )}
@@ -391,33 +247,11 @@ export default function TeamSection({
           pointer-events: none;
         }
         .flip-card {
-          perspective: 2000px;
-          width: min(90vw, 420px);
-          height: 560px;
+          /* card is 2:3, so height = 1.5 x width; keep it inside the viewport */
+          width: min(90vw, 420px, 62vh);
         }
         .flip-card-mobile {
-          width: min(90vw, 360px);
-          height: 500px;
-        }
-        .flip-card-inner {
-          position: relative;
-          width: 100%;
-          height: 100%;
-          transition: transform 0.8s ease;
-          transform-style: preserve-3d;
-        }
-        .flip-card-inner.is-flipped {
-          transform: rotateY(180deg);
-        }
-        .flip-card-front,
-        .flip-card-back {
-          position: absolute;
-          inset: 0;
-          backface-visibility: hidden;
-          border-radius: 28px;
-        }
-        .flip-card-back {
-          transform: rotateY(180deg);
+          width: min(90vw, 360px, 60vh);
         }
         @keyframes fadeInUp {
           from {

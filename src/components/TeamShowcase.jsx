@@ -164,6 +164,7 @@ const TeamShowcase = () => {
             </div>
             <TeamSection
               team={team}
+              year={selectedYear}
               hoveredMemberId={hoveredMemberId}
               onHoverMember={(id) => setHoveredMemberId(id)}
             />
