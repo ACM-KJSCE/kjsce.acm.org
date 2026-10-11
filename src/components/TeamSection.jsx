@@ -1,23 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import MemberCard from "./MemberCard";
-
-const scrollMobilePopupToCenter = (card) => {
-  if (!card) return;
-
-  const cardRect = card.getBoundingClientRect();
-  const cardCenterY = cardRect.top + cardRect.height / 2;
-  const viewport = window.visualViewport;
-  const viewportMidpoint =
-    (viewport?.offsetTop ?? 0) + (viewport?.height ?? window.innerHeight) / 2;
-  const diff = cardCenterY - viewportMidpoint;
-
-  if (Math.abs(diff) > 1) {
-    window.scrollBy({
-      top: diff,
-      behavior: "smooth",
-    });
-  }
-};
 
 export default function TeamSection({
   team,
@@ -25,7 +8,6 @@ export default function TeamSection({
   hoveredMemberId,
   onHoverMember,
 }) {
-  const mobilePopupCardRef = useRef(null);
   const closeTimerRef = useRef(null);
   const [isPopupClosing, setIsPopupClosing] = useState(false);
   const selectedMember = hoveredMemberId
@@ -39,40 +21,24 @@ export default function TeamSection({
     [],
   );
 
+  useEffect(() => {
+    if (!selectedMember) return undefined;
+
+    const previousHtmlOverflow = document.documentElement.style.overflow;
+    const previousBodyOverflow = document.body.style.overflow;
+    document.documentElement.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.documentElement.style.overflow = previousHtmlOverflow;
+      document.body.style.overflow = previousBodyOverflow;
+    };
+  }, [selectedMember]);
+
   const handleMemberSelect = (memberId) => {
     window.clearTimeout(closeTimerRef.current);
     setIsPopupClosing(false);
     onHoverMember?.(memberId);
-
-    if (window.matchMedia("(max-width: 1023px)").matches) {
-      requestAnimationFrame(() =>
-        scrollMobilePopupToCenter(mobilePopupCardRef.current),
-      );
-      return;
-    }
-
-    requestAnimationFrame(() => {
-      const overlay = [...document.querySelectorAll(".popup-overlay")].find(
-        (element) => window.getComputedStyle(element).display !== "none",
-      );
-      const card = overlay?.querySelector(".popup-card");
-
-      if (!card) return;
-
-      const cardRect = card.getBoundingClientRect();
-      const cardCenterY = cardRect.top + cardRect.height / 2;
-      const viewport = window.visualViewport;
-      const viewportMidpoint =
-        (viewport?.offsetTop ?? 0) + (viewport?.height ?? window.innerHeight) / 2;
-      const diff = cardCenterY - viewportMidpoint;
-
-      if (Math.abs(diff) > 1) {
-        window.scrollBy({
-          top: diff,
-          behavior: "smooth",
-        });
-      }
-    });
   };
 
   const handleMemberClose = () => {
@@ -141,19 +107,6 @@ export default function TeamSection({
           ))}
         </div>
 
-        {selectedMember && (
-          <div
-            className={`absolute inset-0 z-20 flex items-center justify-center bg-slate-950/55 backdrop-blur-sm p-4 popup-overlay ${isPopupClosing ? "popup-overlay-closing" : ""}`}
-            onClick={handleMemberClose}
-          >
-            <div
-              className={`flip-card popup-card ${isPopupClosing ? "popup-card-closing" : ""}`}
-              onClick={(e) => e.stopPropagation()}
-            >
-              <MemberCard member={selectedMember} year={year} />
-            </div>
-          </div>
-        )}
       </div>
 
       {/* Mobile Layout - Team grid with overlay detail card popup */}
@@ -213,21 +166,23 @@ export default function TeamSection({
           </div>
         </div>
 
-        {selectedMember && (
+      </div>
+
+      {selectedMember &&
+        createPortal(
           <div
-            className={`absolute inset-0 z-20 flex items-center justify-center bg-slate-950/55 backdrop-blur-sm p-4 popup-overlay ${isPopupClosing ? "popup-overlay-closing" : ""}`}
+            className={`fixed inset-0 z-[10000] flex items-center justify-center bg-slate-950/55 backdrop-blur-sm p-4 popup-overlay ${isPopupClosing ? "popup-overlay-closing" : ""}`}
             onClick={handleMemberClose}
           >
             <div
-              ref={mobilePopupCardRef}
-              className={`flip-card flip-card-mobile popup-card ${isPopupClosing ? "popup-card-closing" : ""}`}
+              className={`flip-card popup-card ${isPopupClosing ? "popup-card-closing" : ""}`}
               onClick={(e) => e.stopPropagation()}
             >
               <MemberCard member={selectedMember} year={year} />
             </div>
-          </div>
+          </div>,
+          document.body,
         )}
-      </div>
 
       <style>{`
         .animate-fade-in-up {
@@ -250,8 +205,10 @@ export default function TeamSection({
           /* card is 2:3, so height = 1.5 x width; keep it inside the viewport */
           width: min(90vw, 420px, 62vh);
         }
-        .flip-card-mobile {
-          width: min(90vw, 360px, 60vh);
+        @media (max-width: 1023px) {
+          .flip-card {
+            width: min(90vw, 360px, 60vh);
+          }
         }
         @keyframes fadeInUp {
           from {
