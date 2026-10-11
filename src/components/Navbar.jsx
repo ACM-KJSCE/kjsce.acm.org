@@ -62,7 +62,7 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Menu */}
-          <ul className="hidden md:flex gap-8 px-6 text-sm font-semibold text-gray-400">
+          <ul className="hidden md:flex gap-4 px-4 text-xs font-semibold text-gray-400 whitespace-nowrap lg:gap-6 lg:px-6 lg:text-sm">
             <li className="cursor-pointer hover:text-white transition-colors" onClick={handleHomeClick}>
               Home
             </li>
